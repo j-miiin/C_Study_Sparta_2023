@@ -1,0 +1,15 @@
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\bin\Debug\net6.0\week1_assignment_readline.exe
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\bin\Debug\net6.0\week1_assignment_readline.deps.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\bin\Debug\net6.0\week1_assignment_readline.runtimeconfig.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\bin\Debug\net6.0\week1_assignment_readline.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\bin\Debug\net6.0\week1_assignment_readline.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\week1_assignment_readline.csproj.AssemblyReference.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\week1_assignment_readline.GeneratedMSBuildEditorConfig.editorconfig
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\week1_assignment_readline.AssemblyInfoInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\week1_assignment_readline.AssemblyInfo.cs
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\week1_assignment_readline.csproj.CoreCompileInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\week1_assignment_readline.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\refint\week1_assignment_readline.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\week1_assignment_readline.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\week1_assignment_readline.genruntimeconfig.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_readline\obj\Debug\net6.0\ref\week1_assignment_readline.dll

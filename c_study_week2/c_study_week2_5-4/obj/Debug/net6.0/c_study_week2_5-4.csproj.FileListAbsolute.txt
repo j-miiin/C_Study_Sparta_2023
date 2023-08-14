@@ -1,0 +1,15 @@
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\bin\Debug\net6.0\c_study_week2_5-4.exe
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\bin\Debug\net6.0\c_study_week2_5-4.deps.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\bin\Debug\net6.0\c_study_week2_5-4.runtimeconfig.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\bin\Debug\net6.0\c_study_week2_5-4.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\bin\Debug\net6.0\c_study_week2_5-4.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\c_study_week2_5-4.csproj.AssemblyReference.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\c_study_week2_5-4.GeneratedMSBuildEditorConfig.editorconfig
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\c_study_week2_5-4.AssemblyInfoInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\c_study_week2_5-4.AssemblyInfo.cs
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\c_study_week2_5-4.csproj.CoreCompileInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\c_study_week2_5-4.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\refint\c_study_week2_5-4.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\c_study_week2_5-4.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\c_study_week2_5-4.genruntimeconfig.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\c_study_week2_5-4\obj\Debug\net6.0\ref\c_study_week2_5-4.dll

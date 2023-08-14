@@ -1,0 +1,15 @@
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\bin\Debug\net6.0\week1_assignment_calculator.exe
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\bin\Debug\net6.0\week1_assignment_calculator.deps.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\bin\Debug\net6.0\week1_assignment_calculator.runtimeconfig.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\bin\Debug\net6.0\week1_assignment_calculator.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\bin\Debug\net6.0\week1_assignment_calculator.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\week1_assignment_calculator.csproj.AssemblyReference.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\week1_assignment_calculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\week1_assignment_calculator.AssemblyInfoInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\week1_assignment_calculator.AssemblyInfo.cs
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\week1_assignment_calculator.csproj.CoreCompileInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\week1_assignment_calculator.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\refint\week1_assignment_calculator.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\week1_assignment_calculator.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\week1_assignment_calculator.genruntimeconfig.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week1\week1_assignment_calculator\obj\Debug\net6.0\ref\week1_assignment_calculator.dll
