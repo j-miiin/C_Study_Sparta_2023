@@ -1,0 +1,15 @@
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\bin\Debug\net6.0\week2_assignment_guess_number_game.exe
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\bin\Debug\net6.0\week2_assignment_guess_number_game.deps.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\bin\Debug\net6.0\week2_assignment_guess_number_game.runtimeconfig.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\bin\Debug\net6.0\week2_assignment_guess_number_game.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\bin\Debug\net6.0\week2_assignment_guess_number_game.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\week2_assignment_guess_number_game.csproj.AssemblyReference.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\week2_assignment_guess_number_game.GeneratedMSBuildEditorConfig.editorconfig
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\week2_assignment_guess_number_game.AssemblyInfoInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\week2_assignment_guess_number_game.AssemblyInfo.cs
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\week2_assignment_guess_number_game.csproj.CoreCompileInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\week2_assignment_guess_number_game.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\refint\week2_assignment_guess_number_game.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\week2_assignment_guess_number_game.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\week2_assignment_guess_number_game.genruntimeconfig.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_guess_number_game\obj\Debug\net6.0\ref\week2_assignment_guess_number_game.dll

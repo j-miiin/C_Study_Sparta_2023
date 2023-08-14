@@ -1,0 +1,15 @@
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\bin\Debug\net6.0\week2_assignment_tic_tac_toe.exe
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\bin\Debug\net6.0\week2_assignment_tic_tac_toe.deps.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\bin\Debug\net6.0\week2_assignment_tic_tac_toe.runtimeconfig.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\bin\Debug\net6.0\week2_assignment_tic_tac_toe.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\bin\Debug\net6.0\week2_assignment_tic_tac_toe.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\week2_assignment_tic_tac_toe.csproj.AssemblyReference.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\week2_assignment_tic_tac_toe.GeneratedMSBuildEditorConfig.editorconfig
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\week2_assignment_tic_tac_toe.AssemblyInfoInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\week2_assignment_tic_tac_toe.AssemblyInfo.cs
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\week2_assignment_tic_tac_toe.csproj.CoreCompileInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\week2_assignment_tic_tac_toe.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\refint\week2_assignment_tic_tac_toe.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\week2_assignment_tic_tac_toe.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\week2_assignment_tic_tac_toe.genruntimeconfig.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_tic_tac_toe\obj\Debug\net6.0\ref\week2_assignment_tic_tac_toe.dll
