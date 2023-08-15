@@ -1,0 +1,15 @@
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\bin\Debug\net6.0\c_study_week3.exe
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\bin\Debug\net6.0\c_study_week3.deps.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\bin\Debug\net6.0\c_study_week3.runtimeconfig.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\bin\Debug\net6.0\c_study_week3.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\bin\Debug\net6.0\c_study_week3.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\c_study_week3.csproj.AssemblyReference.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\c_study_week3.GeneratedMSBuildEditorConfig.editorconfig
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\c_study_week3.AssemblyInfoInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\c_study_week3.AssemblyInfo.cs
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\c_study_week3.csproj.CoreCompileInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\c_study_week3.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\refint\c_study_week3.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\c_study_week3.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\c_study_week3.genruntimeconfig.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\c_study_week3\obj\Debug\net6.0\ref\c_study_week3.dll
