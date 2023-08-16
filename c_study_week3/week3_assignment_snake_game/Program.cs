@@ -20,7 +20,6 @@ namespace week3_assignment_snake_game
         static int snakeLength = 3;
         static int star = 0;
 
-
         static void Main(string[] args)
         {
             int[,] gameBoard = new int[GAME_BOARD_SIZE, GAME_BOARD_SIZE];
