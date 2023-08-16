@@ -1,0 +1,15 @@
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\bin\Debug\net6.0\week3_assignment_snake_game.exe
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\bin\Debug\net6.0\week3_assignment_snake_game.deps.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\bin\Debug\net6.0\week3_assignment_snake_game.runtimeconfig.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\bin\Debug\net6.0\week3_assignment_snake_game.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\bin\Debug\net6.0\week3_assignment_snake_game.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\week3_assignment_snake_game.csproj.AssemblyReference.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\week3_assignment_snake_game.GeneratedMSBuildEditorConfig.editorconfig
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\week3_assignment_snake_game.AssemblyInfoInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\week3_assignment_snake_game.AssemblyInfo.cs
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\week3_assignment_snake_game.csproj.CoreCompileInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\week3_assignment_snake_game.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\refint\week3_assignment_snake_game.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\week3_assignment_snake_game.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\week3_assignment_snake_game.genruntimeconfig.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game\obj\Debug\net6.0\ref\week3_assignment_snake_game.dll
