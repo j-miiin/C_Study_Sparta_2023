@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "week4_assignment_text_rpg/1.0.0": {
+        "runtime": {
+          "week4_assignment_text_rpg.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "week4_assignment_text_rpg/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

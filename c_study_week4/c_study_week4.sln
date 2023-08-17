@@ -9,13 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "c_study_week4_4_1_2", "c_st
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "c_study_week4_4_1_3", "c_study_week4_4_1_3\c_study_week4_4_1_3.csproj", "{1F706468-C1B5-428C-8BB1-2B1A83966A0C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c_study_week4_4_3", "c_study_week4_4_3\c_study_week4_4_3.csproj", "{6B7FB0BD-CDFC-400F-90F9-A1E6158B69A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "c_study_week4_4_3", "c_study_week4_4_3\c_study_week4_4_3.csproj", "{6B7FB0BD-CDFC-400F-90F9-A1E6158B69A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c_study_week4_4_3_2", "c_study_week4_4_3_2\c_study_week4_4_3_2.csproj", "{54A06F22-FB61-4093-B3BC-06D275A8B50B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "c_study_week4_4_3_2", "c_study_week4_4_3_2\c_study_week4_4_3_2.csproj", "{54A06F22-FB61-4093-B3BC-06D275A8B50B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c_study_week4_4_3_3", "c_study_week4_4_3_3\c_study_week4_4_3_3.csproj", "{3005CCF9-C11A-430E-91F5-6CF2D1278273}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "c_study_week4_4_3_3", "c_study_week4_4_3_3\c_study_week4_4_3_3.csproj", "{3005CCF9-C11A-430E-91F5-6CF2D1278273}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "c_study_week4_4_4", "c_study_week4_4_4\c_study_week4_4_4.csproj", "{9CD6F91A-57FD-4C74-8C18-51DB57266476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "c_study_week4_4_4", "c_study_week4_4_4\c_study_week4_4_4.csproj", "{9CD6F91A-57FD-4C74-8C18-51DB57266476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week4_assignment_text_rpg", "week4_assignment_text_rpg\week4_assignment_text_rpg.csproj", "{663FB4B9-CF79-416A-B961-72623448AFB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{9CD6F91A-57FD-4C74-8C18-51DB57266476}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9CD6F91A-57FD-4C74-8C18-51DB57266476}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9CD6F91A-57FD-4C74-8C18-51DB57266476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{663FB4B9-CF79-416A-B961-72623448AFB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{663FB4B9-CF79-416A-B961-72623448AFB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{663FB4B9-CF79-416A-B961-72623448AFB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{663FB4B9-CF79-416A-B961-72623448AFB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
