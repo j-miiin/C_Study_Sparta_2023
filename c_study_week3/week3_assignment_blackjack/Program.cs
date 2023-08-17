@@ -37,6 +37,7 @@
             Console.WriteLine("Player Money : " + playerMoney);
             Console.Write("베팅 금액 : ");
             curBetMoney = betMoney();   // 플레이어 베팅
+            playerMoney -= curBetMoney;
 
             giveCards();    // 딜러가 카드를 돌림
 
@@ -88,7 +89,6 @@
                         if (Hit(PLAYER_TYPE))   // player의 hit 선언 후 Bust가 된 경우
                         {
                             Console.WriteLine("Bust!");
-                            playerMoney -= curBetMoney;
                             isGameOver = true;
                             isPlayerEnd = true;
                         }
@@ -104,9 +104,9 @@
                     case 4:
                         if (playerMoney - curBetMoney < 0) Console.WriteLine("베팅 금액 부족으로 Double Down 할 수 없습니다. 다시 고르세요.");
                         else
-                        {
-                            curBetMoney *= 2;
+                        {                          
                             playerMoney -= curBetMoney;
+                            curBetMoney *= 2;
                         }
                         getNewCard(PLAYER_TYPE);    // DoubleDown 선언 후 새 카드를 뽑음
                         isPlayerEnd = true;
@@ -186,7 +186,7 @@
                 if (result == PLAYER_TYPE)
                 {
                     Console.WriteLine("Player 승리!");
-                    playerMoney += curBetMoney;
+                    playerMoney += (curBetMoney * 2);
                 } else if (result == DEALER_TYPE)
                 {
                     Console.WriteLine("Dealer 승리!");
