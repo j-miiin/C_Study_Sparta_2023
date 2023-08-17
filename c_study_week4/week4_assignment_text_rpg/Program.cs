@@ -26,7 +26,7 @@ namespace week4_assignment_text_rpg
         // Player 관련 값 const 변수
         const int PLAYER_HP = 100;
         const int PLAYER_SHIELD = 0;
-        const float PLAYER_SHIELD_REDUCE = 0.6f;
+        const float PLAYER_SHIELD_REDUCE = 0.5f;
         const int PLAYER_POWER = 30;
 
         // Monster 관련 값 const 변수
@@ -184,7 +184,15 @@ namespace week4_assignment_text_rpg
                                 monster.Attack();
                                 if (player.Shield > 0)
                                 {
-
+                                    if (player.Shield - (int)(monster.Power * PLAYER_SHIELD_REDUCE) >= 0)
+                                    {
+                                        player.Shield -= (int)(monster.Power * PLAYER_SHIELD_REDUCE);
+                                    } else
+                                    {
+                                        int restDamage = monster.Power - (player.Shield * 2);
+                                        player.Shield = 0;
+                                        player.HP -= restDamage;
+                                    }
                                 } else
                                 {
                                     player.HP -= monster.Power;
