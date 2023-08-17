@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\week3_assignment_blackjack.csproj": {}
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\week3_assignment_blackjack.csproj": {}
   },
   "projects": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\week3_assignment_blackjack.csproj": {
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\week3_assignment_blackjack.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\week3_assignment_blackjack.csproj",
+        "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\week3_assignment_blackjack.csproj",
         "projectName": "week3_assignment_blackjack",
-        "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\week3_assignment_blackjack.csproj",
+        "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\week3_assignment_blackjack.csproj",
         "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-        "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\obj\\",
+        "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_blackjack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",

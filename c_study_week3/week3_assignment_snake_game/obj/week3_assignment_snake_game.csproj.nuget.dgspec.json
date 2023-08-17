@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\week3_assignment_snake_game.csproj": {}
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\week3_assignment_snake_game.csproj": {}
   },
   "projects": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\week3_assignment_snake_game.csproj": {
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\week3_assignment_snake_game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\week3_assignment_snake_game.csproj",
+        "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\week3_assignment_snake_game.csproj",
         "projectName": "week3_assignment_snake_game",
-        "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\week3_assignment_snake_game.csproj",
+        "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\week3_assignment_snake_game.csproj",
         "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-        "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\obj\\",
+        "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\week3_assignment_snake_game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_4\\c_study_week3_3_4.csproj",
+      "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_4\\c_study_week3_3_4.csproj",
       "projectName": "c_study_week3_3_4",
-      "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_4\\c_study_week3_3_4.csproj",
+      "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_4\\c_study_week3_3_4.csproj",
       "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-      "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_4\\obj\\",
+      "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_4\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",

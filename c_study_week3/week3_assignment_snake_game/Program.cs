@@ -4,12 +4,13 @@ namespace week3_assignment_snake_game
 {
     internal class Program
     { 
-        const int GAME_BOARD_SIZE = 10;
+        const int GAME_BOARD_SIZE = 20;
         const int EMPTY = 0;
         const int SNAKE = 1;
         const int STAR = 2;
         const int FIRST_X = 5;
         const int FIRST_Y = 3;
+        const int SPEED = 70;
 
         static int[] dx = { 0, 1, 0, -1 };
         static int[] dy = {1, 0, -1, 0 };
@@ -29,7 +30,6 @@ namespace week3_assignment_snake_game
 
             Console.Title = "Snake Game";
             Console.WriteLine("Welcome!");
-            Console.WriteLine("ESC : 종료");
 
             Thread.Sleep(1000);
 
@@ -55,9 +55,8 @@ namespace week3_assignment_snake_game
                     gameBoard[nextX, nextY] == SNAKE)
                 {
                     Console.WriteLine("게임 종료!");
-                    Console.WriteLine("뱀 길이 : " + snakeLength);
-                    Console.WriteLine("먹은 별의 개수 : " + star);
                     isGameOver = true;
+                    Environment.Exit(0);
                 }
                 else
                 {
@@ -67,7 +66,7 @@ namespace week3_assignment_snake_game
                 curX = nextX;
                 curY = nextY;
 
-                Thread.Sleep(100);
+                Thread.Sleep(SPEED);
             }
         }
 
@@ -107,6 +106,10 @@ namespace week3_assignment_snake_game
                 }
                 Console.WriteLine();
             }
+
+            Console.WriteLine();
+            Console.WriteLine("뱀 길이 : " + snakeLength);
+            Console.WriteLine("먹은 별의 개수 : " + star);
         }
 
         // 방향키 입력을 받아서 뱀의 이동 방향 바꾸기

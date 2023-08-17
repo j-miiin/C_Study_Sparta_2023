@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\c_study_week3_3_2_3.csproj": {}
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\c_study_week3_3_2_3.csproj": {}
   },
   "projects": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\c_study_week3_3_2_3.csproj": {
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\c_study_week3_3_2_3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\c_study_week3_3_2_3.csproj",
+        "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\c_study_week3_3_2_3.csproj",
         "projectName": "c_study_week3_3_2_3",
-        "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\c_study_week3_3_2_3.csproj",
+        "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\c_study_week3_3_2_3.csproj",
         "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-        "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\obj\\",
+        "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week3\\c_study_week3_3_2_3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",
