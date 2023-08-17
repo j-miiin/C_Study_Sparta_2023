@@ -123,6 +123,4 @@ namespace week4_assignment_text_rpg
             Console.WriteLine("{0}이(가) {1}만큼의 공격을 합니다!", name, power);
         }
     }
-
-    
 }
