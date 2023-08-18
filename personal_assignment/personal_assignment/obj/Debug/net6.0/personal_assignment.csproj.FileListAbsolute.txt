@@ -1,0 +1,15 @@
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\bin\Debug\net6.0\personal_assignment.exe
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\bin\Debug\net6.0\personal_assignment.deps.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\bin\Debug\net6.0\personal_assignment.runtimeconfig.json
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\bin\Debug\net6.0\personal_assignment.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\bin\Debug\net6.0\personal_assignment.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.csproj.AssemblyReference.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.GeneratedMSBuildEditorConfig.editorconfig
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.AssemblyInfoInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.AssemblyInfo.cs
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.csproj.CoreCompileInputs.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\refint\personal_assignment.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.pdb
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.genruntimeconfig.cache
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\ref\personal_assignment.dll

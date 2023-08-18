@@ -1,0 +1,15 @@
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\bin\Debug\net6.0\week3_assignment_snake_game_retry.exe
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\bin\Debug\net6.0\week3_assignment_snake_game_retry.deps.json
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\bin\Debug\net6.0\week3_assignment_snake_game_retry.runtimeconfig.json
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\bin\Debug\net6.0\week3_assignment_snake_game_retry.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\bin\Debug\net6.0\week3_assignment_snake_game_retry.pdb
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\week3_assignment_snake_game_retry.csproj.AssemblyReference.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\week3_assignment_snake_game_retry.GeneratedMSBuildEditorConfig.editorconfig
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\week3_assignment_snake_game_retry.AssemblyInfoInputs.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\week3_assignment_snake_game_retry.AssemblyInfo.cs
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\week3_assignment_snake_game_retry.csproj.CoreCompileInputs.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\week3_assignment_snake_game_retry.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\refint\week3_assignment_snake_game_retry.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\week3_assignment_snake_game_retry.pdb
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\week3_assignment_snake_game_retry.genruntimeconfig.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week3\week3_assignment_snake_game_retry\obj\Debug\net6.0\ref\week3_assignment_snake_game_retry.dll
