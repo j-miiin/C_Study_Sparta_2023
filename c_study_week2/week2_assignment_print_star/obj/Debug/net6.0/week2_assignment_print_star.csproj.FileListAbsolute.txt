@@ -1,0 +1,15 @@
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\bin\Debug\net6.0\week2_assignment_print_star.exe
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\bin\Debug\net6.0\week2_assignment_print_star.deps.json
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\bin\Debug\net6.0\week2_assignment_print_star.runtimeconfig.json
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\bin\Debug\net6.0\week2_assignment_print_star.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\bin\Debug\net6.0\week2_assignment_print_star.pdb
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\week2_assignment_print_star.csproj.AssemblyReference.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\week2_assignment_print_star.GeneratedMSBuildEditorConfig.editorconfig
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\week2_assignment_print_star.AssemblyInfoInputs.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\week2_assignment_print_star.AssemblyInfo.cs
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\week2_assignment_print_star.csproj.CoreCompileInputs.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\week2_assignment_print_star.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\refint\week2_assignment_print_star.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\week2_assignment_print_star.pdb
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\week2_assignment_print_star.genruntimeconfig.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week2\week2_assignment_print_star\obj\Debug\net6.0\ref\week2_assignment_print_star.dll
