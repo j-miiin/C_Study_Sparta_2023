@@ -141,7 +141,6 @@ namespace personal_assignment
             int idx = 1;
             foreach (Item item in itemList)
             {
-
                 // 아이템 이름
                 ("-").PrintWithColor(ConsoleColor.Yellow, false);
                 // 장착 관리 상태일 경우 번호 표시

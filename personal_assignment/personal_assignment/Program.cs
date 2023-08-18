@@ -5,16 +5,14 @@ namespace personal_assignment
     internal class Program
     {
         // Item Database
-        static int dbIdx = 0;
-        static Dictionary<int, string[]> itemDB = new Dictionary<int, string[]>
-        {
-            // 아이템 이름, 타입(방어 or 공격), 가치, 가격, 설명
-            { dbIdx++, new string[]{"무쇠갑옷", "0", "5", "500", "무쇠로 만들어져 튼튼한 갑옷입니다." } },
-            { dbIdx++, new string[]{ "낡은 검", "1", "2", "600", "쉽게 볼 수 있는 낡은 검입니다." } },
-            { dbIdx++, new string[]{ "수련자 갑옷", "0", "9", "1000", "수련에 도움을 주는 갑옷입니다." } },
-            { dbIdx++, new string[]{ "스파르타의 갑옷", "0", "30", "3500", "스파르타의 전사들이 사용했다는 전설의 갑옷입니다." } },
-            { dbIdx++, new string[]{ "청동 도끼", "1", "8", "1200", "어디선가 사용된 것 같은 도끼입니다." } },
-            { dbIdx++, new string[]{ "스파르타의 창", "1", "15", "2500", "스파르타의 전사들이 사용했다는 전설의 창입니다." } },
+        static List<string[]> itemDB = new List<string[]> 
+        { 
+            new string[] { "무쇠갑옷", "0", "5", "500", "무쇠로 만들어져 튼튼한 갑옷입니다." } ,
+            new string[]{ "낡은 검", "1", "2", "600", "쉽게 볼 수 있는 낡은 검입니다." },
+            new string[]{ "수련자 갑옷", "0", "9", "1000", "수련에 도움을 주는 갑옷입니다." },
+            new string[]{ "스파르타의 갑옷", "0", "30", "3500", "스파르타의 전사들이 사용했다는 전설의 갑옷입니다." },
+            new string[]{ "청동 도끼", "1", "8", "1200", "어디선가 사용된 것 같은 도끼입니다." },
+            new string[]{ "스파르타의 창", "1", "15", "2500", "스파르타의 전사들이 사용했다는 전설의 창입니다." }
         };
 
         // Player 관련 값 const 변수
@@ -72,9 +70,9 @@ namespace personal_assignment
             string playerName = Console.ReadLine();
             player = new Player(playerName, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, new List<Item>());
 
-            player.InitItemList(getItemFromDB(0));
-            player.InitItemList(getItemFromDB(1));
-            player.InitItemList(getItemFromDB(3));
+            player.InitItemList(GetItemFromDB(0));
+            player.InitItemList(GetItemFromDB(1));
+            player.InitItemList(GetItemFromDB(3));
         }
 
         static void InitStore()
@@ -82,14 +80,14 @@ namespace personal_assignment
             List<Item> itemList = new List<Item>();
             for (int i = 0; i < itemDB.Count; i++)
             {
-                itemList.Add(getItemFromDB(i));
+                itemList.Add(GetItemFromDB(i));
             }
             store = new Store(itemList);
         }
 
-        static Item getItemFromDB(int itemIdx)
+        static Item GetItemFromDB(int itemIdx)
         {
-            string[] itemStr = itemDB.GetValueOrDefault(itemIdx);
+            string[] itemStr = itemDB[itemIdx];
             int idx = 0;
             return new Item(
                 itemStr[idx++],
