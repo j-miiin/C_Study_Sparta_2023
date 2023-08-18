@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_tic_tac_toe\\week2_assignment_tic_tac_toe.csproj",
+      "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_tic_tac_toe\\week2_assignment_tic_tac_toe.csproj",
       "projectName": "week2_assignment_tic_tac_toe",
-      "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_tic_tac_toe\\week2_assignment_tic_tac_toe.csproj",
+      "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_tic_tac_toe\\week2_assignment_tic_tac_toe.csproj",
       "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-      "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_tic_tac_toe\\obj\\",
+      "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_tic_tac_toe\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",

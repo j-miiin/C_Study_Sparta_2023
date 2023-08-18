@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_fahrenheit_converter\\week1_assignment_fahrenheit_converter.csproj",
+      "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_fahrenheit_converter\\week1_assignment_fahrenheit_converter.csproj",
       "projectName": "week1_assignment_fahrenheit_converter",
-      "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_fahrenheit_converter\\week1_assignment_fahrenheit_converter.csproj",
+      "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_fahrenheit_converter\\week1_assignment_fahrenheit_converter.csproj",
       "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-      "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_fahrenheit_converter\\obj\\",
+      "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_fahrenheit_converter\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",

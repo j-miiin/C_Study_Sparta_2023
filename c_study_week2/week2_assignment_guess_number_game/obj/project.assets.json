@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_guess_number_game\\week2_assignment_guess_number_game.csproj",
+      "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_guess_number_game\\week2_assignment_guess_number_game.csproj",
       "projectName": "week2_assignment_guess_number_game",
-      "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_guess_number_game\\week2_assignment_guess_number_game.csproj",
+      "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_guess_number_game\\week2_assignment_guess_number_game.csproj",
       "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-      "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_guess_number_game\\obj\\",
+      "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\week2_assignment_guess_number_game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",

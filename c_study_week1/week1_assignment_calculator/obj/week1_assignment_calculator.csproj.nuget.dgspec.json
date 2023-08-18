@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\week1_assignment_calculator.csproj": {}
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\week1_assignment_calculator.csproj": {}
   },
   "projects": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\week1_assignment_calculator.csproj": {
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\week1_assignment_calculator.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\week1_assignment_calculator.csproj",
+        "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\week1_assignment_calculator.csproj",
         "projectName": "week1_assignment_calculator",
-        "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\week1_assignment_calculator.csproj",
+        "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\week1_assignment_calculator.csproj",
         "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-        "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\obj\\",
+        "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week1\\week1_assignment_calculator\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",

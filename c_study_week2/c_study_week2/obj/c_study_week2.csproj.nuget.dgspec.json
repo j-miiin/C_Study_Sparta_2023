@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\c_study_week2.csproj": {}
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\c_study_week2.csproj": {}
   },
   "projects": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\c_study_week2.csproj": {
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\c_study_week2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\c_study_week2.csproj",
+        "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\c_study_week2.csproj",
         "projectName": "c_study_week2",
-        "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\c_study_week2.csproj",
+        "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\c_study_week2.csproj",
         "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-        "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\obj\\",
+        "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\c_study_week2\\c_study_week2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",
