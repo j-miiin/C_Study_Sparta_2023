@@ -28,20 +28,24 @@ namespace personal_assignment
         static int playState = 0;
 
         static Player player;
+        static Store store;
 
         static void Main(string[] args)
         {
-            initPlayerInfo();
+            InitPlayerInfo();
+            InitStore();
 
             while (true)
             {
-                if (startState == 0) displayStartState();
-                else if (startState == 1) displayPlayerInfo();
-                else displayInventoryInfo();
+                // 1: 상태 보기, 2: 인벤토리, 3: 상점
+                if (startState == 0) DisplayStartState();
+                else if (startState == 1) DisplayPlayerInfo();
+                else if (startState == 2) DisplayInventoryInfo();
+                else DisplayStore();
             }
         }
         
-        static void displayStartState()
+        static void DisplayStartState()
         {
             Console.Clear();
             Console.WriteLine("스파르타 마을에 오신 여러분 환영합니다.");
@@ -52,14 +56,14 @@ namespace personal_assignment
             ("2").PrintWithColor(ConsoleColor.Magenta, false);
             Console.WriteLine(". 인벤토리");
             ("3").PrintWithColor(ConsoleColor.Magenta, false);
-            Console.WriteLine(". 상점 열기");
+            Console.WriteLine(". 상점");
             Console.WriteLine();
             startState = GetPlayerSelect(1, 3);
         }
 
         // 플레이어 닉네임을 받아서 플레이어 객체 생성
         // 초기값을 설정해줌
-        static void initPlayerInfo()
+        static void InitPlayerInfo()
         {
             Console.Title = "[ 스파르타 던전 ]";
             Console.WriteLine("[ 스파르타 던전 ]");
@@ -71,6 +75,16 @@ namespace personal_assignment
             player.InitItemList(getItemFromDB(0));
             player.InitItemList(getItemFromDB(1));
             player.InitItemList(getItemFromDB(3));
+        }
+
+        static void InitStore()
+        {
+            List<Item> itemList = new List<Item>();
+            for (int i = 0; i < itemDB.Count; i++)
+            {
+                itemList.Add(getItemFromDB(i));
+            }
+            store = new Store(itemList);
         }
 
         static Item getItemFromDB(int itemIdx)
@@ -89,23 +103,25 @@ namespace personal_assignment
         // 시작 화면에서 상태 보기 선택시 실행
         // 화면에 플레이어의 정보 표시
         // 레벨, 이름, 직업, 공격력, 방어력, 체력, Gold
-        // TODO 아이템 착용 여부 확인 후 착용시 아이템 수치 출력 추가
-        static void displayPlayerInfo()
+        static void DisplayPlayerInfo()
         {
             Console.Clear();
             ("상태 보기").PrintWithColor(ConsoleColor.Yellow, true);
             Console.WriteLine("캐릭터의 정보가 표시됩니다.");
             Console.WriteLine();
+
             player.DisplayPlayerInfo();
             Console.WriteLine(); Console.WriteLine();
+
             ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
             Console.WriteLine();
+
             int select = GetPlayerSelect(0, 0);
             if (select == 0) startState = select;
         }
 
         // 플레이어의 인벤토리 상태를 보여줌
-        static void displayInventoryInfo()
+        static void DisplayInventoryInfo()
         {
             Console.Clear();
             ("인벤토리").PrintWithColor(ConsoleColor.Yellow, true);
@@ -117,12 +133,14 @@ namespace personal_assignment
                 Console.WriteLine("보유하고 있는 아이템이 없습니다!");
             } else
             {
-                player.OpenItemInventory(0);
+                player.DisplayItemInventory(0);
                 Console.WriteLine();
+
                 ("1").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 장착 관리");
                 ("2").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 아이템 정렬");
                 ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
                 Console.WriteLine();
+
                 int select = GetPlayerSelect(0, 2);
                 if (select == 0) startState = select;
                 else if (select == 1) ManagementItemInventory();
@@ -140,15 +158,18 @@ namespace personal_assignment
                 ("인벤토리 - 장착 관리").PrintWithColor(ConsoleColor.Yellow, true);
                 Console.WriteLine("보유 중인 아이템을 장착하거나 해제할 수 있습니다.");
                 Console.WriteLine();
-                player.OpenItemInventory(1);
+
+                player.DisplayItemInventory(1);
                 Console.WriteLine();
+
                 ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
                 Console.WriteLine();
+
                 int select = GetPlayerSelect(0, player.GetItemCount());
                 if (select == 0)
                 {
                     isExit = true;
-                    displayInventoryInfo();
+                    DisplayInventoryInfo();
                 }
                 else player.EquipItem(select - 1);
             }  
@@ -163,21 +184,96 @@ namespace personal_assignment
                 ("인벤토리 - 아이템 정렬").PrintWithColor(ConsoleColor.Yellow, true);
                 Console.WriteLine("보유 중인 아이템을 정렬할 수 있습니다.");
                 Console.WriteLine();
-                player.OpenItemInventory(1);
+
+                player.DisplayItemInventory(1);
                 Console.WriteLine();
+
                 ("1").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 이름");
                 ("2").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 장착순");
                 ("3").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 공격력");
                 ("4").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 방어력");
                 ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
                 Console.WriteLine();
+
                 int select = GetPlayerSelect(0, 4);
                 if (select == 0)
                 {
                     isExit = true;
-                    displayInventoryInfo();
+                    DisplayInventoryInfo();
                 }
                 else player.ArrangeItemInventory(select);
+            }
+        }
+
+        static void DisplayStore()
+        {
+            Console.Clear();
+            ("상점").PrintWithColor(ConsoleColor.Yellow, true);
+            Console.WriteLine("필요한 아이템을 얻을 수 있는 상점입니다.");
+            Console.WriteLine();
+
+            player.DisplayMoney();
+            Console.WriteLine();
+
+            store.DisplayStore(0);
+            Console.WriteLine();
+
+            ("1").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 아이템 구매");
+            ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
+
+            int select = GetPlayerSelect(0, 1);
+            if (select == 0) startState = select;
+            else if (select == 1) BuyItem();
+            else ArrangeItemInventory();
+        }
+
+        static void BuyItem()
+        {
+            bool isExit = false;
+            while (!isExit)
+            {
+                Console.Clear();
+                ("인벤토리 - 아이템 구매").PrintWithColor(ConsoleColor.Yellow, true);
+                Console.WriteLine("필요한 아이템을 구매할 수 있습니다.");
+                Console.WriteLine();
+
+                player.DisplayMoney();
+                Console.WriteLine();
+
+                store.DisplayStore(1);
+                Console.WriteLine();
+
+                ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
+
+                int select = GetPlayerSelect(0, store.GetStoreItemCount());
+                if (select == 0)
+                {
+                    isExit = true;
+                    DisplayStore();
+                }
+                else
+                {
+                    if (store.IsAbleToBuy(select - 1))
+                    {
+                        Item selectedItem = store.GetStoreItem(select - 1);
+                        if (player.IsAbleToBuy(selectedItem.Price))
+                        {
+                            store.BuyItem(select - 1);
+                            player.BuyItem(selectedItem);
+                            ("구매를 완료했습니다.").PrintWithColor(ConsoleColor.Blue, true);
+                            Thread.Sleep(1000);
+                        }
+                        else
+                        {
+                            ("Gold가 부족합니다.").PrintWithColor(ConsoleColor.Red, true);
+                            Thread.Sleep(1000);
+                        }
+                    } else
+                    {
+                        ("이미 구매한 아이템입니다.").PrintWithColor(ConsoleColor.Blue, true);
+                        Thread.Sleep(1000);
+                    }
+                }
             }
         }
 

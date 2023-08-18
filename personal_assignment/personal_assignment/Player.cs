@@ -76,27 +76,25 @@ namespace personal_assignment
             set { money = value; }
         }
 
+        // 초기 플레이어의 아이템 인벤토리 상태를 초기화하는 함수
         public void InitItemList(Item item)
         {
             itemList.Add(item);
         }
 
-        public void BuyItem(Item item)
-        {
-            itemList.Add(item);
-            money -= item.Price;
-        }
-
+        // 플레이어 인벤토리 아이템 개수 반환
         public int GetItemCount()
         {
             return itemList.Count;
         }
 
+        // 플레이어 인벤토리 아이템 리스트 반환
         public List<Item> GetItemList()
         {
             return itemList;
         }
 
+        // 플레이어의 정보를 보여주는 함수
         public void DisplayPlayerInfo()
         {
             Console.Write("Lv. "); ("0" + level).PrintWithColor(ConsoleColor.Magenta, true);
@@ -135,9 +133,11 @@ namespace personal_assignment
             Console.Write("Gold : "); (money.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(" G");
         }
 
-        public void OpenItemInventory(int type)
+        // 플레이어의 현재 아이템 인벤토리 상태를 보여주는 함수
+        // type이 0이면 인벤토리, type이 1이면 인벤토리 - 장착 관리 상태
+        public void DisplayItemInventory(int type)
         {
-            Console.WriteLine("아이템 목록");
+            Console.WriteLine("[ 아이템 목록 ]");
             int idx = 1;
             foreach (Item item in itemList)
             {
@@ -147,15 +147,16 @@ namespace personal_assignment
                 // 장착 관리 상태일 경우 번호 표시
                 if (type == 1) (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
                 if (item.IsEquipped) Console.Write(" [E]");
-                Console.Write(" " + item.Name + "\t");
+                Console.Write(" " + item.Name);
+
+                Extension.MakeDivider();
 
                 // 아이템 효과
-                ("|").PrintWithColor(ConsoleColor.Yellow, false);
-                if (item.Type == 0) Console.Write(" 방어력 "); else Console.Write(" 공격력 ");
+                if (item.Type == 0) Console.Write("방어력 "); else Console.Write("공격력 ");
                 ("+").PrintWithColor(ConsoleColor.Yellow, false);
-                (item.Value.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.Write(" ");
-                ("|").PrintWithColor(ConsoleColor.Yellow, false);
-                Console.Write("\t");
+                (item.Value.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+
+                Extension.MakeDivider();
 
                 // 아이템 설명
                 Console.WriteLine(item.Description);
@@ -163,12 +164,16 @@ namespace personal_assignment
             }
         }
 
+        // 아이템 장착 함수
+        // itemIdx를 받아서 현재 플레이어의 아이템 리스트 중 itemIdx번째 아이템을 장착 또는 해제
         public void EquipItem(int itemIdx)
         {
             Item curItem = itemList[itemIdx];
             curItem.IsEquipped = !curItem.IsEquipped ;
         }
 
+        // 플레이어의 아이템 인벤토리를 정렬하는 함수
+        // pivot 값에 따라 이름, 장착, 공격력, 방어력 순으로 정렬됨
         public void ArrangeItemInventory(int pivot)
         {
             switch (pivot)
@@ -192,6 +197,23 @@ namespace personal_assignment
                         .ThenByDescending(item => item.Name.Length).ToList();
                     break;
             }
+        }
+
+        public void DisplayMoney()
+        {
+            Console.WriteLine("[ 보유 골드 ]");
+            (money.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(" G");
+        }
+
+        public bool IsAbleToBuy(int itemPrice)
+        {
+            return itemPrice <= money;
+        }
+
+        public void BuyItem(Item item)
+        {
+            itemList.Add(item);
+            money -= item.Price;
         }
     }
 }

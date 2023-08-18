@@ -19,4 +19,14 @@ namespace personal_assignment
             Console.ResetColor();
         }
     }
+
+    public static class Extension
+    {
+        public static void MakeDivider()
+        {
+            Console.Write(" ");
+            ("|").PrintWithColor(ConsoleColor.Yellow, false);
+            Console.Write(" ");
+        }
+    }
 }
