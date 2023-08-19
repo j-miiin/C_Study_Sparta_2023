@@ -217,12 +217,13 @@ namespace personal_assignment
             Console.WriteLine();
 
             ("1").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 아이템 구매");
+            ("1").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 아이템 판매");
             ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
 
-            int select = GetPlayerSelect(0, 1);
+            int select = GetPlayerSelect(0, 2);
             if (select == 0) startState = select;
             else if (select == 1) BuyItem();
-            else ArrangeItemInventory();
+            else SellItem();
         }
 
         static void BuyItem()
@@ -247,7 +248,6 @@ namespace personal_assignment
                 if (select == 0)
                 {
                     isExit = true;
-                    DisplayStore();
                 }
                 else
                 {
@@ -267,6 +267,58 @@ namespace personal_assignment
                             Thread.Sleep(1000);
                         }
                     } else
+                    {
+                        ("이미 구매한 아이템입니다.").PrintWithColor(ConsoleColor.Blue, true);
+                        Thread.Sleep(1000);
+                    }
+                }
+            }
+        }
+
+        static void SellItem()
+        {
+            bool isExit = false;
+            while (!isExit)
+            {
+                Console.Clear();
+                ("인벤토리 - 아이템 판매").PrintWithColor(ConsoleColor.Yellow, true);
+                Console.WriteLine("아이템을 판매할 수 있습니다.");
+                Console.WriteLine();
+
+                player.DisplayMoney();
+                Console.WriteLine();
+
+                // TODO Item 클래스에 상점에서 산 아이템인지 아닌지 확인하는 bool 프로퍼티 추가 
+                // TODO Player 클래스에서 아이템 인벤토리 보여줄 때 type 2 추가 -> type 2이면 상점에서 산 것만 보여주고 가격도 표시
+                player.DisplayItemInventory(2);
+                Console.WriteLine();
+
+                ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
+
+                int select = GetPlayerSelect(0, store.GetStoreItemCount());
+                if (select == 0)
+                {
+                    isExit = true;
+                }
+                else
+                {
+                    if (store.IsAbleToBuy(select - 1))
+                    {
+                        Item selectedItem = store.GetStoreItem(select - 1);
+                        if (player.IsAbleToBuy(selectedItem.Price))
+                        {
+                            store.BuyItem(select - 1);
+                            player.BuyItem(selectedItem);
+                            ("구매를 완료했습니다.").PrintWithColor(ConsoleColor.Blue, true);
+                            Thread.Sleep(1000);
+                        }
+                        else
+                        {
+                            ("Gold가 부족합니다.").PrintWithColor(ConsoleColor.Red, true);
+                            Thread.Sleep(1000);
+                        }
+                    }
+                    else
                     {
                         ("이미 구매한 아이템입니다.").PrintWithColor(ConsoleColor.Blue, true);
                         Thread.Sleep(1000);
