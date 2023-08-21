@@ -12,8 +12,6 @@ namespace personal_assignment.Repository
     {
         const string DATA_PATH = "D:\\coding\\Game Study\\C_Study_Sparta_2023\\";
         const string PLAYER_DB_PATH = "UserDatabase.txt";
-        const string PLAYER_ITEM_LIST_DB_PATH = "UserItemListDatabase.txt";
-        const string PLAYER_PURCHASED_ITEM_LIST_DB_PATH = "UserBoughtItemListDatabase.txt";
         const string ITEM_DB_PATH = "ItemDatabase.txt";
         const string ITEM_SOLD_STATE_DB_PATH = "ItemSoldStateDatabase.txt";
 
@@ -95,7 +93,5 @@ namespace personal_assignment.Repository
                 itemStr[idx++]
             );
         }
-
-        
     }
 }

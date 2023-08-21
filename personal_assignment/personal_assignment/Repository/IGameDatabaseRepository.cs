@@ -8,10 +8,9 @@ namespace personal_assignment.Repository
 {
     internal interface IGameDatabaseRepository
     {
-        // 전체 상점 Item List 불러오기
-        // Player 정보 불러오기(string name, int hp, int shield, int power, int money)
-        // Player가 가진 Inventory Item List 정보 불러오기
-        // Player의 상점 구매 내역 Item List 정보 불러오기
+        // Player 정보 불러오기(string name, int hp, int shield, int power, int money) 및 업데이트
+        // 전체 상점 Item List 불러오기 및 업데이트
+        // 상점의 아이템 판매 현황 불러오기 및 업데이트
 
         public Player? GetPlayerInfo();
 

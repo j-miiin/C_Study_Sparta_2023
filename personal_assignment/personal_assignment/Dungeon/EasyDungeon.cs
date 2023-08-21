@@ -15,6 +15,7 @@ namespace personal_assignment.Dungeon
         { 
             get { return recommendedShield; }
         }
+
         public int DefaultReward 
         { 
             get { return defaultReward; } 
