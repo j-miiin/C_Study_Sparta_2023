@@ -289,7 +289,7 @@ namespace personal_assignment
             Console.WriteLine();
         }
 
-        public void ClearDungeon(int decreasedHP, int reward)
+        public void ClearDungeon(int decreasedHP, int reward, bool isLevelUp)
         {
             Console.WriteLine("[ 탐험 결과 ]");
             Console.Write("체력 ");
@@ -307,7 +307,30 @@ namespace personal_assignment
             money += reward;
 
             (money.ToString()).PrintWithColor(ConsoleColor.Magenta, true);
+
+            if (isLevelUp)
+            {
+                Console.Write("Level ");
+                ("Lv" + level).PrintWithColor(ConsoleColor.Magenta, false);
+                (" -> ").PrintWithColor(ConsoleColor.Yellow, false);
+
+                if (level < 5)
+                {
+                    level++;
+                    power += 0.5;
+                    shield += 1;
+                }
+
+                ("Lv" + level).PrintWithColor(ConsoleColor.Magenta, true);
+            }
+            
             Console.WriteLine();
+        }
+
+        public void GetRest()
+        {
+            hp = 100;
+            money -= 500;
         }
     }
 }

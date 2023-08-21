@@ -37,6 +37,7 @@ namespace personal_assignment
 
         static Player player;
         static Store store;
+        static int clearDungeonNum = 0;
 
         static void Main(string[] args)
         {
@@ -45,12 +46,13 @@ namespace personal_assignment
 
             while (true)
             {
-                // 1: 상태 보기, 2: 인벤토리, 3: 상점
+                // 1: 상태 보기, 2: 인벤토리, 3: 상점, 4: 던전 입장, 5: 휴식하기
                 if (startState == 0) DisplayStartState();
                 else if (startState == 1) DisplayPlayerInfo();
                 else if (startState == 2) DisplayInventoryInfo();
                 else if (startState == 3) DisplayStore();
-                else DisplayDungeonInfo();
+                else if (startState == 4) DisplayDungeonInfo();
+                else TakeRest();
             }
         }
         
@@ -68,8 +70,10 @@ namespace personal_assignment
             Console.WriteLine(". 상점");
             ("4").PrintWithColor(ConsoleColor.Magenta, false);
             Console.WriteLine(". 던전 입장");
+            ("5").PrintWithColor(ConsoleColor.Magenta, false);
+            Console.WriteLine(". 휴식하기");
             Console.WriteLine();
-            startState = GetPlayerSelect(1, 4);
+            startState = GetPlayerSelect(1, 5);
         }
 
         // 플레이어 닉네임을 받아서 플레이어 객체 생성
@@ -419,7 +423,12 @@ namespace personal_assignment
                     int reward = dungeon.DefaultReward + additionalReward;
 
                     dungeon.ClearDungeon();
-                    player.ClearDungeon(decreasedHP, reward);
+                    clearDungeonNum++;
+                    if (clearDungeonNum == player.Level)
+                    {
+                        player.ClearDungeon(decreasedHP, reward, true);
+                        clearDungeonNum = 0;
+                    } else player.ClearDungeon(decreasedHP, reward, false);
                 }
             }
 
@@ -431,6 +440,45 @@ namespace personal_assignment
             {
                 startState = 0;
                 return;
+            }
+        }
+
+        static void TakeRest()
+        {
+            bool isExit = false;
+            while (!isExit)
+            {
+                Console.Clear();
+                ("휴식하기").PrintWithColor(ConsoleColor.Yellow, true);
+                ("500").PrintWithColor(ConsoleColor.Magenta, false); Console.Write(" G를 내면 체력을 회복할 수 있습니다. (보유 골드 : ");
+                (player.Money.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(" G)");
+                Console.WriteLine();
+
+                ("1").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 휴식하기");
+                ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
+                Console.WriteLine();
+
+                int select = GetPlayerSelect(0, 1);
+                if (select == 0)
+                {
+                    isExit = true;
+                    startState = 0;
+                }
+                else
+                {
+                    if (player.Money < 500)
+                    {
+                        ("Gold 가 부족합니다.").PrintWithColor(ConsoleColor.Red, true);
+                        Thread.Sleep(1000);
+                    } else
+                    {
+                        ("휴식을 완료했습니다.").PrintWithColor(ConsoleColor.Blue, true);
+                        player.GetRest();
+                        isExit = true;
+                        startState = 0;
+                        Thread.Sleep(1000);
+                    }
+                }
             }
         }
     }
