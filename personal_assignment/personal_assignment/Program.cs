@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using personal_assignment.Dungeon;
+using System.Numerics;
 
 namespace personal_assignment
 {
@@ -24,13 +25,11 @@ namespace personal_assignment
         // 던전 관련 값 상수
         const int EASY = 1;
         const int EASY_SHIELD = 5;
-        const int EASY_REWARD = 1000;
         const int NORMAL = 2;
-        const int NORMAL_SHIELD = 5;
-        const int NORMAL_REWARD = 1000;
+        const int NORMAL_SHIELD =11;
         const int HARD = 3;
-        const int HARD_SHIELD = 5;
-        const int HARD_REWARD = 1000;
+        const int HARD_SHIELD = 17;
+        const int SUCCESS_PROBABLILITY = 60;
 
         // state
         static int startState = 0;
@@ -67,8 +66,10 @@ namespace personal_assignment
             Console.WriteLine(". 인벤토리");
             ("3").PrintWithColor(ConsoleColor.Magenta, false);
             Console.WriteLine(". 상점");
+            ("4").PrintWithColor(ConsoleColor.Magenta, false);
+            Console.WriteLine(". 던전 입장");
             Console.WriteLine();
-            startState = GetPlayerSelect(1, 3);
+            startState = GetPlayerSelect(1, 4);
         }
 
         // 플레이어 닉네임을 받아서 플레이어 객체 생성
@@ -342,20 +343,23 @@ namespace personal_assignment
 
         static void DisplayDungeonInfo()
         {
-            int dungeon_easy = 5;
-            int dungeon_normal = 11;
-            int dungeon_hard = 17;
+            Console.Clear();
+            ("던전 입장").PrintWithColor(ConsoleColor.Yellow, true);
+            Console.WriteLine("이곳에서 들어갈 던전을 선택할 수 있습니다.");
+            Console.WriteLine();
 
-            printDungeonInfo(1, dungeon_easy);
-            printDungeonInfo(2, dungeon_normal);
-            printDungeonInfo(3, dungeon_hard);
+            printDungeonInfo(EASY, EASY_SHIELD);
+            printDungeonInfo(NORMAL, NORMAL_SHIELD);
+            printDungeonInfo(HARD, HARD_SHIELD);
+            ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
+            Console.WriteLine();
 
             int select = GetPlayerSelect(0, 3);
 
             if (select == 0) startState = 0;
             else
             {
-
+                startDungeon(select);
             }
         }
 
@@ -372,6 +376,62 @@ namespace personal_assignment
             Console.Write("방어력 "); 
             (recommendedShield.ToString()).PrintWithColor(ConsoleColor.Magenta, false); 
             Console.WriteLine(" 이상 권장");
+        }
+
+        static void startDungeon(int mode)
+        {
+            Console.Clear();
+            Console.WriteLine("던전 진행 중...");
+            Thread.Sleep(2000);
+
+            Console.Clear();
+
+            IDungeon dungeon;
+
+            if (mode == EASY) dungeon = new EasyDungeon();
+            else if (mode == NORMAL) dungeon = new NormalDungeon();
+            else dungeon = new HardDungeon();
+
+            int success = new Random().Next(1, 101);
+
+            // 권장 방어력보다 낮을 때
+            if ((dungeon.RecommendedShield > player.Shield) && (success > SUCCESS_PROBABLILITY))
+            {
+                dungeon.FailedDungeon();
+                player.DungeonFailed(0);
+            }
+            else
+            {
+                // 권장 방어력보다 높을 때 or 낮지만 던전 성공시
+                int defaultDecreasedHP = new Random().Next(20, 36);
+                int additionalDecreasedHP = dungeon.RecommendedShield - player.Shield;
+                int decreasedHP = defaultDecreasedHP + additionalDecreasedHP;
+
+                if (decreasedHP >= player.HP)
+                {
+                    dungeon.FailedDungeon();
+                    player.DungeonFailed(1);
+                }
+                else
+                {
+                    int additionalRewardPercent = new Random().Next(player.Power, (player.Power * 2) + 1);
+                    int additionalReward = (int)((dungeon.DefaultReward * additionalRewardPercent) / 100);
+                    int reward = dungeon.DefaultReward + additionalReward;
+
+                    dungeon.ClearDungeon();
+                    player.ClearDungeon(decreasedHP, reward);
+                }
+            }
+
+            ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
+            Console.WriteLine();
+
+            int select = GetPlayerSelect(0, 0);
+            if (select == 0)
+            {
+                startState = 0;
+                return;
+            }
         }
     }
 }

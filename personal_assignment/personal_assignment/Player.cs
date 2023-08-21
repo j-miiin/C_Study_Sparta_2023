@@ -274,5 +274,40 @@ namespace personal_assignment
 
             return item.Name;
         }
+
+        public void DungeonFailed(int type)
+        {
+            Console.WriteLine("[ 탐험 결과 ]");
+            Console.Write("체력 "); 
+            (hp.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+            (" -> ").PrintWithColor(ConsoleColor.Yellow, false);
+
+            if (type == 0) hp = (int)(hp / 2);
+            else hp = 0;
+
+            (hp.ToString()).PrintWithColor(ConsoleColor.Magenta, true);
+            Console.WriteLine();
+        }
+
+        public void ClearDungeon(int decreasedHP, int reward)
+        {
+            Console.WriteLine("[ 탐험 결과 ]");
+            Console.Write("체력 ");
+            (hp.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+            (" -> ").PrintWithColor(ConsoleColor.Yellow, false);
+
+            hp -= decreasedHP;
+
+            (hp.ToString()).PrintWithColor(ConsoleColor.Magenta, true);
+
+            Console.Write("Gold ");
+            (money.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+            (" -> ").PrintWithColor(ConsoleColor.Yellow, false);
+
+            money += reward;
+
+            (money.ToString()).PrintWithColor(ConsoleColor.Magenta, true);
+            Console.WriteLine();
+        }
     }
 }
