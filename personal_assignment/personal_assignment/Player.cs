@@ -17,8 +17,9 @@ namespace personal_assignment
         private int power;
         private int money;
         private List<Item> itemList;
+        private List<Item> boughtItemList;
 
-        public Player(string name, int hp, int shield, int power, int money, List<Item> itemList)
+        public Player(string name, int hp, int shield, int power, int money, List<Item> itemList, List<Item> boughtItemList)
         {
             this.name = name;
             this.hp = hp;
@@ -26,6 +27,7 @@ namespace personal_assignment
             this.power = power;
             this.money = money;
             this.itemList = itemList;
+            this.boughtItemList = boughtItemList;
         }
 
         public string Name
@@ -159,6 +161,7 @@ namespace personal_assignment
 
                 // 아이템 설명
                 Console.WriteLine(item.Description);
+
                 idx++;
             }
         }
@@ -168,7 +171,17 @@ namespace personal_assignment
         public void EquipItem(int itemIdx)
         {
             Item curItem = itemList[itemIdx];
-            curItem.IsEquipped = !curItem.IsEquipped ;
+            if (!curItem.IsEquipped)
+            {
+                foreach (Item item in itemList)
+                {
+                    if (item.Name == curItem.Name) continue;
+
+                    if (item.Type == curItem.Type) item.IsEquipped = false;
+                }
+                curItem.IsEquipped = true;
+            }
+            else curItem.IsEquipped = false;
         }
 
         // 플레이어의 아이템 인벤토리를 정렬하는 함수
@@ -212,7 +225,54 @@ namespace personal_assignment
         public void BuyItem(Item item)
         {
             itemList.Add(item);
+            boughtItemList.Add(item);
             money -= item.Price;
+        }
+
+        public void DisplayBoughtItem()
+        {
+            Console.WriteLine("[ 아이템 목록 ]");
+            int idx = 1;
+            foreach (Item item in boughtItemList)
+            {
+                // 아이템 이름
+                ("-").PrintWithColor(ConsoleColor.Yellow, false);
+                (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+                if (item.IsEquipped) Console.Write(" [E]");
+                Console.Write(" " + item.Name);
+
+                Extension.MakeDivider();
+
+                // 아이템 효과
+                if (item.Type == 0) Console.Write("방어력 "); else Console.Write("공격력 ");
+                ("+").PrintWithColor(ConsoleColor.Yellow, false);
+                (item.Value.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+
+                Extension.MakeDivider();
+
+                // 아이템 설명
+                Console.Write(item.Description);
+
+                Extension.MakeDivider();
+
+                // 아이템 판매일 경우 아이템 가격 표시
+                (item.Price.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(" G");
+                
+                idx++;
+            }
+        }
+
+        public string SellItem(int itemIdx)
+        {
+            Item item = boughtItemList[itemIdx];
+            item.IsEquipped = false;
+
+            money += (int)(item.Price * 0.85);
+
+            boughtItemList.Remove(item);
+            itemList.Remove(item);
+
+            return item.Name;
         }
     }
 }

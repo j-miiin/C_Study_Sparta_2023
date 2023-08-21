@@ -91,5 +91,10 @@ namespace personal_assignment
             string key = selectedItem.Name;
             soldState[key] = true;
         }
+
+        public void RecoverItem(string itemName)
+        {
+            soldState[itemName] = false;
+        }
     }
 }

@@ -14,6 +14,7 @@ namespace personal_assignment
         private int price;
         private string description;
         private bool isEquipped = false;
+        private bool isFromStore = false;
 
         public Item(string name, int type, int value, int price, string description)
         {

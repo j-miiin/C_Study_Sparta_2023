@@ -15,11 +15,22 @@ namespace personal_assignment
             new string[]{ "스파르타의 창", "1", "15", "2500", "스파르타의 전사들이 사용했다는 전설의 창입니다." }
         };
 
-        // Player 관련 값 const 변수
+        // Player 관련 값 상수
         const int PLAYER_HP = 100;
         const int PLAYER_SHIELD = 5;
         const int PLAYER_POWER = 10;
         const int PLAYER_MONEY = 1500;
+
+        // 던전 관련 값 상수
+        const int EASY = 1;
+        const int EASY_SHIELD = 5;
+        const int EASY_REWARD = 1000;
+        const int NORMAL = 2;
+        const int NORMAL_SHIELD = 5;
+        const int NORMAL_REWARD = 1000;
+        const int HARD = 3;
+        const int HARD_SHIELD = 5;
+        const int HARD_REWARD = 1000;
 
         // state
         static int startState = 0;
@@ -39,7 +50,8 @@ namespace personal_assignment
                 if (startState == 0) DisplayStartState();
                 else if (startState == 1) DisplayPlayerInfo();
                 else if (startState == 2) DisplayInventoryInfo();
-                else DisplayStore();
+                else if (startState == 3) DisplayStore();
+                else DisplayDungeonInfo();
             }
         }
         
@@ -68,7 +80,7 @@ namespace personal_assignment
             Console.WriteLine();
             Console.Write("Player 닉네임을 입력해주세요 : ");
             string playerName = Console.ReadLine();
-            player = new Player(playerName, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, new List<Item>());
+            player = new Player(playerName, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, new List<Item>(), new List<Item>());
 
             player.InitItemList(GetItemFromDB(0));
             player.InitItemList(GetItemFromDB(1));
@@ -217,7 +229,7 @@ namespace personal_assignment
             Console.WriteLine();
 
             ("1").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 아이템 구매");
-            ("1").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 아이템 판매");
+            ("2").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 아이템 판매");
             ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
 
             int select = GetPlayerSelect(0, 2);
@@ -288,9 +300,7 @@ namespace personal_assignment
                 player.DisplayMoney();
                 Console.WriteLine();
 
-                // TODO Item 클래스에 상점에서 산 아이템인지 아닌지 확인하는 bool 프로퍼티 추가 
-                // TODO Player 클래스에서 아이템 인벤토리 보여줄 때 type 2 추가 -> type 2이면 상점에서 산 것만 보여주고 가격도 표시
-                player.DisplayItemInventory(2);
+                player.DisplayBoughtItem();
                 Console.WriteLine();
 
                 ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
@@ -302,27 +312,10 @@ namespace personal_assignment
                 }
                 else
                 {
-                    if (store.IsAbleToBuy(select - 1))
-                    {
-                        Item selectedItem = store.GetStoreItem(select - 1);
-                        if (player.IsAbleToBuy(selectedItem.Price))
-                        {
-                            store.BuyItem(select - 1);
-                            player.BuyItem(selectedItem);
-                            ("구매를 완료했습니다.").PrintWithColor(ConsoleColor.Blue, true);
-                            Thread.Sleep(1000);
-                        }
-                        else
-                        {
-                            ("Gold가 부족합니다.").PrintWithColor(ConsoleColor.Red, true);
-                            Thread.Sleep(1000);
-                        }
-                    }
-                    else
-                    {
-                        ("이미 구매한 아이템입니다.").PrintWithColor(ConsoleColor.Blue, true);
-                        Thread.Sleep(1000);
-                    }
+                    string itemName = player.SellItem(select - 1);
+                    store.RecoverItem(itemName);
+                    ("판매를 완료했습니다.").PrintWithColor(ConsoleColor.Blue, true);
+                    Thread.Sleep(1000);
                 }
             }
         }
@@ -345,6 +338,40 @@ namespace personal_assignment
                 else break;
             }
             return select;
+        }
+
+        static void DisplayDungeonInfo()
+        {
+            int dungeon_easy = 5;
+            int dungeon_normal = 11;
+            int dungeon_hard = 17;
+
+            printDungeonInfo(1, dungeon_easy);
+            printDungeonInfo(2, dungeon_normal);
+            printDungeonInfo(3, dungeon_hard);
+
+            int select = GetPlayerSelect(0, 3);
+
+            if (select == 0) startState = 0;
+            else
+            {
+
+            }
+        }
+
+        static void printDungeonInfo(int mode, int recommendedShield)
+        {
+            (mode.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+
+            if (mode == 1) Console.Write(". 쉬운 던전");
+            else if (mode == 2) Console.Write(". 일반 던전");
+            else Console.Write(". 어려운 던전");
+
+            Extension.MakeDivider();
+
+            Console.Write("방어력 "); 
+            (recommendedShield.ToString()).PrintWithColor(ConsoleColor.Magenta, false); 
+            Console.WriteLine(" 이상 권장");
         }
     }
 }
