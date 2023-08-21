@@ -1,21 +1,11 @@
-﻿using personal_assignment.Dungeon;
-using System.Numerics;
+﻿using Newtonsoft.Json;
+using personal_assignment.Dungeon;
+using personal_assignment.Repository;
 
 namespace personal_assignment
 {
     internal class Program
     {
-        // Item Database
-        static List<string[]> itemDB = new List<string[]> 
-        { 
-            new string[] { "무쇠갑옷", "0", "5", "500", "무쇠로 만들어져 튼튼한 갑옷입니다." } ,
-            new string[]{ "낡은 검", "1", "2", "600", "쉽게 볼 수 있는 낡은 검입니다." },
-            new string[]{ "수련자 갑옷", "0", "9", "1000", "수련에 도움을 주는 갑옷입니다." },
-            new string[]{ "스파르타의 갑옷", "0", "30", "3500", "스파르타의 전사들이 사용했다는 전설의 갑옷입니다." },
-            new string[]{ "청동 도끼", "1", "8", "1200", "어디선가 사용된 것 같은 도끼입니다." },
-            new string[]{ "스파르타의 창", "1", "15", "2500", "스파르타의 전사들이 사용했다는 전설의 창입니다." }
-        };
-
         // Player 관련 값 상수
         const int PLAYER_HP = 100;
         const int PLAYER_SHIELD = 5;
@@ -31,6 +21,8 @@ namespace personal_assignment
         const int HARD_SHIELD = 17;
         const int SUCCESS_PROBABLILITY = 60;
 
+        static bool isGameOver = false;
+
         // state
         static int startState = 0;
         static int playState = 0;
@@ -39,23 +31,58 @@ namespace personal_assignment
         static Store store;
         static int clearDungeonNum = 0;
 
+        static IGameDatabaseRepository gameDatabaseRepository;
+
         static void Main(string[] args)
         {
+            gameDatabaseRepository = new DefaultGameDatabaseRepository();
+
             InitPlayerInfo();
             InitStore();
 
-            while (true)
+            while (!isGameOver)
             {
-                // 1: 상태 보기, 2: 인벤토리, 3: 상점, 4: 던전 입장, 5: 휴식하기
+                // startState - 0: 시작 화면, 1: 상태 보기, 2: 인벤토리, 3: 상점, 4: 던전 입장, 5: 휴식하기, 6: 게임 저장, -1: 게임 종료
                 if (startState == 0) DisplayStartState();
                 else if (startState == 1) DisplayPlayerInfo();
                 else if (startState == 2) DisplayInventoryInfo();
                 else if (startState == 3) DisplayStore();
                 else if (startState == 4) DisplayDungeonInfo();
-                else TakeRest();
+                else if (startState == 5) TakeRest();
+                else if (startState == 6) SaveGame();
+                else EndGame();
             }
         }
         
+
+        // 이전에 플레이한 기록이 있다면 읽어와서 player 객체에 저장
+        // 기록이 없다면 플레이어 닉네임을 받아서 새 플레이어 객체 생성
+        static void InitPlayerInfo()
+        {
+            Player tmp = gameDatabaseRepository.GetPlayerInfo();
+            if (tmp == null)
+            {
+                Console.Title = "[ 스파르타 던전 ]";
+                Console.WriteLine("[ 스파르타 던전 ]");
+                Console.WriteLine();
+                Console.Write("Player 닉네임을 입력해주세요 : ");
+                string name = Console.ReadLine();
+
+                player = new Player(name, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, new List<Item>(), new List<Item>());
+
+                List<Item> allItemList = gameDatabaseRepository.GetStoreItemList();
+                player.InitItemList(allItemList[0]);
+                player.InitItemList(allItemList[1]);
+            }
+            else player = tmp;        
+        }        
+
+        static void InitStore()
+        {
+            store = new Store(gameDatabaseRepository.GetStoreItemList(), gameDatabaseRepository.GetStoreItemSoldStateList());
+        }
+
+        // 시작 화면을 보여주는 함수
         static void DisplayStartState()
         {
             Console.Clear();
@@ -72,48 +99,16 @@ namespace personal_assignment
             Console.WriteLine(". 던전 입장");
             ("5").PrintWithColor(ConsoleColor.Magenta, false);
             Console.WriteLine(". 휴식하기");
+            ("6").PrintWithColor(ConsoleColor.Magenta, false);
+            Console.WriteLine(". 게임 저장");
+            ("0").PrintWithColor(ConsoleColor.Magenta, false);
+            Console.WriteLine(". 게임 종료");
             Console.WriteLine();
-            startState = GetPlayerSelect(1, 5);
+            int select = GetPlayerSelect(0, 6);
+            if (select == 0) startState = -1;   // 게임 종료
+            else startState = select;
         }
 
-        // 플레이어 닉네임을 받아서 플레이어 객체 생성
-        // 초기값을 설정해줌
-        static void InitPlayerInfo()
-        {
-            Console.Title = "[ 스파르타 던전 ]";
-            Console.WriteLine("[ 스파르타 던전 ]");
-            Console.WriteLine();
-            Console.Write("Player 닉네임을 입력해주세요 : ");
-            string playerName = Console.ReadLine();
-            player = new Player(playerName, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, new List<Item>(), new List<Item>());
-
-            player.InitItemList(GetItemFromDB(0));
-            player.InitItemList(GetItemFromDB(1));
-        }
-
-        static void InitStore()
-        {
-            List<Item> itemList = new List<Item>();
-            for (int i = 0; i < itemDB.Count; i++)
-            {
-                itemList.Add(GetItemFromDB(i));
-            }
-            store = new Store(itemList);
-        }
-
-        static Item GetItemFromDB(int itemIdx)
-        {
-            string[] itemStr = itemDB[itemIdx];
-            int idx = 0;
-            return new Item(
-                itemStr[idx++],
-                int.Parse(itemStr[idx++]),
-                int.Parse(itemStr[idx++]),
-                int.Parse(itemStr[idx++]),
-                itemStr[idx++]
-            );
-        }
-        
         // 시작 화면에서 상태 보기 선택시 실행
         // 화면에 플레이어의 정보 표시
         // 레벨, 이름, 직업, 공격력, 방어력, 체력, Gold
@@ -397,8 +392,11 @@ namespace personal_assignment
 
             int success = new Random().Next(1, 101);
 
+            int playerTotalShield = player.Shield + player.GetAdditionalShield();
+            int playerTotalPower = player.Power + player.GetAdditionalPower();
+
             // 권장 방어력보다 낮을 때
-            if ((dungeon.RecommendedShield > player.Shield) && (success > SUCCESS_PROBABLILITY))
+            if ((dungeon.RecommendedShield > playerTotalShield) && (success > SUCCESS_PROBABLILITY))
             {
                 dungeon.FailedDungeon();
                 player.DungeonFailed(0);
@@ -407,7 +405,7 @@ namespace personal_assignment
             {
                 // 권장 방어력보다 높을 때 or 낮지만 던전 성공시
                 int defaultDecreasedHP = new Random().Next(20, 36);
-                int additionalDecreasedHP = dungeon.RecommendedShield - player.Shield;
+                int additionalDecreasedHP = dungeon.RecommendedShield - playerTotalShield;
                 int decreasedHP = defaultDecreasedHP + additionalDecreasedHP;
 
                 if (decreasedHP >= player.HP)
@@ -417,7 +415,7 @@ namespace personal_assignment
                 }
                 else
                 {
-                    int additionalRewardPercent = new Random().Next(player.Power, (player.Power * 2) + 1);
+                    int additionalRewardPercent = new Random().Next(playerTotalPower, (playerTotalPower * 2) + 1);
                     int additionalReward = (int)((dungeon.DefaultReward * additionalRewardPercent) / 100);
                     int reward = dungeon.DefaultReward + additionalReward;
 
@@ -479,6 +477,20 @@ namespace personal_assignment
                     }
                 }
             }
+        }
+
+        static void SaveGame()
+        {
+            gameDatabaseRepository.UpdatePlayerInfo(player);
+            gameDatabaseRepository.UpdateStoreItemSoldState(store.SoldState);
+            startState = 0;
+        }
+
+        static void EndGame()
+        {
+            Console.Clear();
+            ("게임을 종료합니다.").PrintWithColor(ConsoleColor.Yellow, true);
+            isGameOver = true;
         }
     }
 }

@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "mL9u2YOGrLnee/NBhLzv0GYXucljL09wVMVa7A974xfzAfHyZ0RRv9+lST+33PgtL/X/QjsoGOUk9DwRqshK4A==",
+  "dgSpecHash": "KGM6+mNSCZ3tgzORL9HWkEeJdMPblaYijz7Cug3TpjLM/uhc1ISFBtlc2QHvGN8dvgVLFowjhzEz2B8ALE+pLg==",
   "success": true,
   "projectFilePath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\A\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

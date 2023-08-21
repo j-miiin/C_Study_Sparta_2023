@@ -11,18 +11,44 @@ namespace personal_assignment
         private List<Item> itemList;
         private Dictionary<string, bool> soldState;
 
-        public Store(List<Item> itemList)
+        public List<Item> ItemList
         {
-            this.itemList = itemList;
-            InitStore();
+            get { return itemList; }
         }
 
-        private void InitStore()
+        public Dictionary<string, bool> SoldState
         {
-            int length = itemList.Count;
-            Console.WriteLine("length = " + length);
-            soldState = new Dictionary<string, bool>();
-            for (int i = 0; i < length; i++) soldState.Add(itemList[i].Name, false);
+            get { return soldState; }
+        }
+
+        public Store(List<Item> itemList, Dictionary<string, bool> soldState)
+        {
+            this.itemList = itemList;
+            InitStore(soldState);
+        }
+
+        private void InitStore(Dictionary<string, bool> soldStateList)
+        {
+            if (soldStateList == null)
+            {
+                int length = itemList.Count;
+                Console.WriteLine("length = " + length);
+                soldState = new Dictionary<string, bool>();
+                for (int i = 0; i < length; i++) soldState.Add(itemList[i].Name, false);
+            } else
+            {
+                soldState = soldStateList;
+                if (itemList.Count != soldState.Count)
+                {
+                    foreach (Item item in itemList)
+                    {
+                        if (soldState[item.Name] == null) 
+                        {
+                            soldState.Add(item.Name, false);
+                        }
+                    }
+                }
+            }
         }
 
         public int GetStoreItemCount()

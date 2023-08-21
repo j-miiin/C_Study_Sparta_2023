@@ -17,9 +17,9 @@ namespace personal_assignment
         private int power;
         private int money;
         private List<Item> itemList;
-        private List<Item> boughtItemList;
+        private List<Item> purchasedItemList;
 
-        public Player(string name, int hp, int shield, int power, int money, List<Item> itemList, List<Item> boughtItemList)
+        public Player(string name, int hp, int shield, int power, int money, List<Item> itemList, List<Item> purchasedItemList)
         {
             this.name = name;
             this.hp = hp;
@@ -27,7 +27,7 @@ namespace personal_assignment
             this.power = power;
             this.money = money;
             this.itemList = itemList;
-            this.boughtItemList = boughtItemList;
+            this.purchasedItemList = purchasedItemList;
         }
 
         public string Name
@@ -62,13 +62,13 @@ namespace personal_assignment
 
         public int Shield
         {
-            get { return shield + GetAdditionalShield(); }
+            get { return shield; }
             set { shield = value; }
         }
 
         public int Power
         {
-            get { return power + GetAdditionalPower(); }
+            get { return power; }
             set { power = value; }
         }
 
@@ -76,6 +76,16 @@ namespace personal_assignment
         {
             get { return money; }
             set { money = value; }
+        }
+
+        public List<Item> ItemList
+        {
+            get { return itemList; }
+        }
+
+        public List<Item> PurchasedItemList
+        {
+            get { return purchasedItemList; }
         }
 
         // 초기 플레이어의 아이템 인벤토리 상태를 초기화하는 함수
@@ -244,7 +254,7 @@ namespace personal_assignment
         public void BuyItem(Item item)
         {
             itemList.Add(item);
-            boughtItemList.Add(item);
+            purchasedItemList.Add(item);
             money -= item.Price;
         }
 
@@ -252,7 +262,7 @@ namespace personal_assignment
         {
             Console.WriteLine("[ 아이템 목록 ]");
             int idx = 1;
-            foreach (Item item in boughtItemList)
+            foreach (Item item in purchasedItemList)
             {
                 // 아이템 이름
                 ("-").PrintWithColor(ConsoleColor.Yellow, false);
@@ -283,12 +293,12 @@ namespace personal_assignment
 
         public string SellItem(int itemIdx)
         {
-            Item item = boughtItemList[itemIdx];
+            Item item = purchasedItemList[itemIdx];
             item.IsEquipped = false;
 
             money += (int)(item.Price * 0.85);
 
-            boughtItemList.Remove(item);
+            purchasedItemList.Remove(item);
             itemList.Remove(item);
 
             return item.Name;

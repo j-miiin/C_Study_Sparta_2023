@@ -13,3 +13,5 @@ C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal
 C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.pdb
 C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.genruntimeconfig.cache
 C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\ref\personal_assignment.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\HDDjungmin\coding\Game Study\C_Study_Sparta_2023\personal_assignment\personal_assignment\obj\Debug\net6.0\personal_assignment.csproj.CopyComplete
