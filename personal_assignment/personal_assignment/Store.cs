@@ -11,11 +11,6 @@ namespace personal_assignment
         private List<Item> itemList;
         private Dictionary<string, bool> soldState;
 
-        public List<Item> ItemList
-        {
-            get { return itemList; }
-        }
-
         public Dictionary<string, bool> SoldState
         {
             get { return soldState; }

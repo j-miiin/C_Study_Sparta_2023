@@ -66,7 +66,7 @@ namespace personal_assignment
                 Console.Write("Player 닉네임을 입력해주세요 : ");
                 string name = Console.ReadLine();
 
-                player = new Player(name, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, 0, new List<Item>(), new List<Item>());
+                player = new Player(name, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, 0, new List<Item>(), new List<string>());
 
                 List<Item> allItemList = gameDatabaseRepository.GetStoreItemList();
                 player.InitItemList(allItemList[0]);
@@ -134,7 +134,7 @@ namespace personal_assignment
             ("인벤토리").PrintWithColor(ConsoleColor.Yellow, true);
             Console.WriteLine("보유 중인 아이템을 관리할 수 있습니다.");
             Console.WriteLine();
-            if (player.GetItemCount() == 0)
+            if (player.ItemList.Count == 0)
             {
                 Console.WriteLine();
                 Console.WriteLine("보유하고 있는 아이템이 없습니다!");
@@ -172,7 +172,7 @@ namespace personal_assignment
                 ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
                 Console.WriteLine();
 
-                int select = GetPlayerSelect(0, player.GetItemCount());
+                int select = GetPlayerSelect(0, player.ItemList.Count);
                 if (select == 0)
                 {
                     isExit = true;
@@ -297,7 +297,7 @@ namespace personal_assignment
                 player.DisplayMoney();
                 Console.WriteLine();
 
-                player.DisplayBoughtItem();
+                player.DisplayPurchasedItem();
                 Console.WriteLine();
 
                 ("0").PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(". 나가기");
@@ -481,6 +481,7 @@ namespace personal_assignment
 
         static void EndGame()
         {
+            SaveGame();
             Console.Clear();
             ("게임을 종료합니다.").PrintWithColor(ConsoleColor.Yellow, true);
             isGameOver = true;

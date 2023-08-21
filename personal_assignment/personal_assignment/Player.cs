@@ -18,9 +18,9 @@ namespace personal_assignment
         private int money;
         private int clearDungeonCount;
         private List<Item> itemList;
-        private List<Item> purchasedItemList;
+        private List<string> purchasedItemList;
 
-        public Player(string name, int hp, int shield, int power, int money, int clearDungeonCount, List<Item> itemList, List<Item> purchasedItemList)
+        public Player(string name, int hp, int shield, int power, int money, int clearDungeonCount, List<Item> itemList, List<string> purchasedItemList)
         {
             this.name = name;
             this.hp = hp;
@@ -91,7 +91,7 @@ namespace personal_assignment
             get { return itemList; }
         }
 
-        public List<Item> PurchasedItemList
+        public List<string> PurchasedItemList
         {
             get { return purchasedItemList; }
         }
@@ -100,18 +100,6 @@ namespace personal_assignment
         public void InitItemList(Item item)
         {
             itemList.Add(item);
-        }
-
-        // 플레이어 인벤토리 아이템 개수 반환
-        public int GetItemCount()
-        {
-            return itemList.Count;
-        }
-
-        // 플레이어 인벤토리 아이템 리스트 반환
-        public List<Item> GetItemList()
-        {
-            return itemList;
         }
 
         // 방어 무기로 인한 추가 방어력 반환
@@ -262,54 +250,63 @@ namespace personal_assignment
         public void BuyItem(Item item)
         {
             itemList.Add(item);
-            purchasedItemList.Add(item);
+            purchasedItemList.Add(item.Name);
             money -= item.Price;
         }
 
-        public void DisplayBoughtItem()
+        public void DisplayPurchasedItem()
         {
             Console.WriteLine("[ 아이템 목록 ]");
             int idx = 1;
-            foreach (Item item in purchasedItemList)
+            foreach (Item item in itemList)
             {
-                // 아이템 이름
-                ("-").PrintWithColor(ConsoleColor.Yellow, false);
-                (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
-                if (item.IsEquipped) Console.Write(" [E]");
-                Console.Write(" " + item.Name);
+                if (purchasedItemList.Contains(item.Name))
+                {
+                    // 아이템 이름
+                    ("-").PrintWithColor(ConsoleColor.Yellow, false);
+                    (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+                    if (item.IsEquipped) Console.Write(" [E]");
+                    Console.Write(" " + item.Name);
 
-                Extension.MakeDivider();
+                    Extension.MakeDivider();
 
-                // 아이템 효과
-                if (item.Type == 0) Console.Write("방어력 "); else Console.Write("공격력 ");
-                ("+").PrintWithColor(ConsoleColor.Yellow, false);
-                (item.Value.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+                    // 아이템 효과
+                    if (item.Type == 0) Console.Write("방어력 "); else Console.Write("공격력 ");
+                    ("+").PrintWithColor(ConsoleColor.Yellow, false);
+                    (item.Value.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
 
-                Extension.MakeDivider();
+                    Extension.MakeDivider();
 
-                // 아이템 설명
-                Console.Write(item.Description);
+                    // 아이템 설명
+                    Console.Write(item.Description);
 
-                Extension.MakeDivider();
+                    Extension.MakeDivider();
 
-                // 아이템 판매일 경우 아이템 가격 표시
-                (item.Price.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(" G");
-                
-                idx++;
+                    // 아이템 판매일 경우 아이템 가격 표시
+                    (item.Price.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(" G");
+
+                    idx++;
+                }
             }
         }
 
         public string SellItem(int itemIdx)
         {
-            Item item = purchasedItemList[itemIdx];
-            item.IsEquipped = false;
+            string itemName = purchasedItemList[itemIdx];
+            purchasedItemList.RemoveAt(itemIdx);
+            foreach (Item item in itemList)
+            {
+                if (itemName == item.Name)
+                {
+                    item.IsEquipped = false;
+                    money += (int)(item.Price * 0.85);
 
-            money += (int)(item.Price * 0.85);
+                    itemList.Remove(item);
 
-            purchasedItemList.Remove(item);
-            itemList.Remove(item);
-
-            return item.Name;
+                    return itemName;
+                }
+            }
+            return itemName;
         }
 
         public void DungeonFailed(int type)
