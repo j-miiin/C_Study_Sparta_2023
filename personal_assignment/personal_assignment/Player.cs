@@ -62,13 +62,13 @@ namespace personal_assignment
 
         public int Shield
         {
-            get { return shield; }
+            get { return shield + GetAdditionalShield(); }
             set { shield = value; }
         }
 
         public int Power
         {
-            get { return power; }
+            get { return power + GetAdditionalPower(); }
             set { power = value; }
         }
 
@@ -96,38 +96,57 @@ namespace personal_assignment
             return itemList;
         }
 
+        // 방어 무기로 인한 추가 방어력 반환
+        public int GetAdditionalShield()
+        {
+            // 착용한 아이템 수치 계산
+            int addShield = 0;
+            foreach (Item item in itemList)
+            {
+                if (item.IsEquipped)
+                {
+                    if (item.Type == 0) addShield += item.Value;
+                }
+            }
+            return addShield;
+        }
+
+        // 공격 무기로 인한 추가 공격력 반환
+        public int GetAdditionalPower()
+        {
+            // 착용한 아이템 수치 계산
+            int addPower = 0;
+            foreach (Item item in itemList)
+            {
+                if (item.IsEquipped)
+                {
+                    if (item.Type == 1) addPower += item.Value;
+                }
+            }
+            return addPower;
+        }
+
         // 플레이어의 정보를 보여주는 함수
         public void DisplayPlayerInfo()
         {
             Console.Write("Lv. "); ("0" + level).PrintWithColor(ConsoleColor.Magenta, true);
             Console.WriteLine(name + " ( " + Job + " )");
 
-            // 착용한 아이템 수치 계산
-            int addAttack = 0, addShield = 0;
-            foreach (Item item in itemList)
-            {
-                if (item.IsEquipped)
-                {
-                    if (item.Type == 0) addShield += item.Value;
-                    else addAttack += item.Value;
-                }
-            }
-
             Console.Write("공격력 : "); (power.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
-            if (addAttack > 0)  // 공격 무기 착용시
+            if (GetAdditionalPower() > 0)  // 공격 무기 착용시
             {
                 // 공격력 : 12 (+2)
                 Console.Write(" ("); ("+").PrintWithColor(ConsoleColor.Yellow, false);
-                (addAttack.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(")");
+                (GetAdditionalPower().ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(")");
             }
             else Console.WriteLine();   // 공격력 : 12
 
             Console.Write("방어력 : "); (shield.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
-            if (addShield > 0)  // 방어구 착용시
+            if (GetAdditionalShield() > 0)  // 방어구 착용시
             {
                 // 방어력 : 10 (+5)
                 Console.Write(" ("); ("+").PrintWithColor(ConsoleColor.Yellow, false);
-                (addShield.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(")");
+                (GetAdditionalShield().ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(")");
             }
             else Console.WriteLine();   // 방어력 : 10
 
@@ -317,8 +336,8 @@ namespace personal_assignment
                 if (level < 5)
                 {
                     level++;
-                    power += 0.5;
-                    shield += 1;
+                    power += 1;
+                    shield += 2;
                 }
 
                 ("Lv" + level).PrintWithColor(ConsoleColor.Magenta, true);

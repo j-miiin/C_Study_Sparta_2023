@@ -89,7 +89,6 @@ namespace personal_assignment
 
             player.InitItemList(GetItemFromDB(0));
             player.InitItemList(GetItemFromDB(1));
-            player.InitItemList(GetItemFromDB(3));
         }
 
         static void InitStore()
