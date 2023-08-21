@@ -25,11 +25,9 @@ namespace personal_assignment
 
         // state
         static int startState = 0;
-        static int playState = 0;
 
         static Player player;
         static Store store;
-        static int clearDungeonNum = 0;
 
         static IGameDatabaseRepository gameDatabaseRepository;
 
@@ -68,7 +66,7 @@ namespace personal_assignment
                 Console.Write("Player 닉네임을 입력해주세요 : ");
                 string name = Console.ReadLine();
 
-                player = new Player(name, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, new List<Item>(), new List<Item>());
+                player = new Player(name, PLAYER_HP, PLAYER_SHIELD, PLAYER_POWER, PLAYER_MONEY, 0, new List<Item>(), new List<Item>());
 
                 List<Item> allItemList = gameDatabaseRepository.GetStoreItemList();
                 player.InitItemList(allItemList[0]);
@@ -420,12 +418,7 @@ namespace personal_assignment
                     int reward = dungeon.DefaultReward + additionalReward;
 
                     dungeon.ClearDungeon();
-                    clearDungeonNum++;
-                    if (clearDungeonNum == player.Level)
-                    {
-                        player.ClearDungeon(decreasedHP, reward, true);
-                        clearDungeonNum = 0;
-                    } else player.ClearDungeon(decreasedHP, reward, false);
+                    player.ClearDungeon(decreasedHP, reward);
                 }
             }
 

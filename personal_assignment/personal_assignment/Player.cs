@@ -16,16 +16,18 @@ namespace personal_assignment
         private int shield;
         private int power;
         private int money;
+        private int clearDungeonCount;
         private List<Item> itemList;
         private List<Item> purchasedItemList;
 
-        public Player(string name, int hp, int shield, int power, int money, List<Item> itemList, List<Item> purchasedItemList)
+        public Player(string name, int hp, int shield, int power, int money, int clearDungeonCount, List<Item> itemList, List<Item> purchasedItemList)
         {
             this.name = name;
             this.hp = hp;
             this.shield = shield;
             this.power = power;
             this.money = money;
+            this.clearDungeonCount = clearDungeonCount;
             this.itemList = itemList;
             this.purchasedItemList = purchasedItemList;
         }
@@ -76,6 +78,12 @@ namespace personal_assignment
         {
             get { return money; }
             set { money = value; }
+        }
+
+        public int ClearDungeonCount
+        {
+            get { return clearDungeonCount; }
+            set { clearDungeonCount = value; }
         }
 
         public List<Item> ItemList
@@ -318,7 +326,7 @@ namespace personal_assignment
             Console.WriteLine();
         }
 
-        public void ClearDungeon(int decreasedHP, int reward, bool isLevelUp)
+        public void ClearDungeon(int decreasedHP, int reward)
         {
             Console.WriteLine("[ 탐험 결과 ]");
             Console.Write("체력 ");
@@ -337,6 +345,10 @@ namespace personal_assignment
 
             (money.ToString()).PrintWithColor(ConsoleColor.Magenta, true);
 
+            clearDungeonCount++;
+
+            bool isLevelUp = (clearDungeonCount == level);
+
             if (isLevelUp)
             {
                 Console.Write("Level ");
@@ -348,6 +360,7 @@ namespace personal_assignment
                     level++;
                     power += 1;
                     shield += 2;
+                    clearDungeonCount = 0;
                 }
 
                 ("Lv" + level).PrintWithColor(ConsoleColor.Magenta, true);
