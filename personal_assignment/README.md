@@ -3,6 +3,8 @@
 ## 설계
 <img src="https://github.com/j-miiin/C_Study_Sparta_2023/assets/62470991/a8383d1b-1d93-4bd1-bb65-81c233eb74f9" width="800" height="600"/>
 
+<br>
+
 ## 기능 및 실행 화면
 
 ### 닉네임 설정
@@ -17,6 +19,7 @@
 
 ### 인벤토리
 <img src="https://velog.velcdn.com/images/lazypotato/post/31a5d5ee-95e6-408b-a6b0-d7dfcd8404ad/image.png"/>
+- 장착 개선도 구현하여 방어/공격 아이템 각각 1개씩만 착용 가능
 
 ### 인벤토리 - 아이템 정렬
 - 이름, 장착, 공격력, 방어력순 정렬 가능
