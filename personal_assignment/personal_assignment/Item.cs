@@ -9,7 +9,7 @@ namespace personal_assignment
     internal class Item
     {
         private string name;
-        private int type;   // 0: 방어, 1: 공격
+        private int type;   // 0: 방어 아이템, 1: 공격 아이템
         private int value;
         private int price;
         private string description;

@@ -97,15 +97,15 @@ namespace personal_assignment
         }
 
         // 초기 플레이어의 아이템 인벤토리 상태를 초기화하는 함수
+        // Item 객체를 받아와서 Player의 itemList에 저장
         public void InitItemList(Item item)
         {
             itemList.Add(item);
         }
 
-        // 방어 무기로 인한 추가 방어력 반환
+        // 플레이어가 착용한 방어 무기로 인한 추가 방어력 반환
         public int GetAdditionalShield()
         {
-            // 착용한 아이템 수치 계산
             int addShield = 0;
             foreach (Item item in itemList)
             {
@@ -117,10 +117,9 @@ namespace personal_assignment
             return addShield;
         }
 
-        // 공격 무기로 인한 추가 공격력 반환
+        // 플레이어가 착용한 공격 무기로 인한 추가 공격력 반환
         public int GetAdditionalPower()
         {
-            // 착용한 아이템 수치 계산
             int addPower = 0;
             foreach (Item item in itemList)
             {
@@ -161,7 +160,7 @@ namespace personal_assignment
         }
 
         // 플레이어의 현재 아이템 인벤토리 상태를 보여주는 함수
-        // type이 0이면 인벤토리, type이 1이면 인벤토리 - 장착 관리 상태
+        // type이 0이면 인벤토리, type이 1이면 인벤토리 - 장착 관리 상태 (번호를 출력해야 함)
         public void DisplayItemInventory(int type)
         {
             Console.WriteLine("[ 아이템 목록 ]");
@@ -171,7 +170,8 @@ namespace personal_assignment
                 // 아이템 이름
                 (" -").PrintWithColor(ConsoleColor.Yellow, false);
                 // 장착 관리 상태일 경우 번호 표시
-                if (type == 1) (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
+                if (type == 1) (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);\
+                // 장착한 아이템이라면 [E] 표시
                 if (item.IsEquipped) Console.Write(" [E] ");
 
                 Extension.AlignmentPrint(new string[] { item.Name, item.Value.ToString(), item.Description }, item.Type);
@@ -186,17 +186,19 @@ namespace personal_assignment
         public void EquipItem(int itemIdx)
         {
             Item curItem = itemList[itemIdx];
-            if (!curItem.IsEquipped)
+            if (!curItem.IsEquipped)    // 장착하지 않은 아이템이라면 장착
             {
                 foreach (Item item in itemList)
                 {
                     if (item.Name == curItem.Name) continue;
-
+                     
+                    // 현재 장착하려는 아이템과 같은 타입의 아이템이 이미 장착되어 있다면 해제함
                     if (item.Type == curItem.Type) item.IsEquipped = false;
                 }
+                // 현재 선택한 아이템 장착
                 curItem.IsEquipped = true;
             }
-            else curItem.IsEquipped = false;
+            else curItem.IsEquipped = false;    // 장착한 아이템이라면 해제
         }
 
         // 플레이어의 아이템 인벤토리를 정렬하는 함수
@@ -226,17 +228,21 @@ namespace personal_assignment
             }
         }
 
+        // 플레이어가 가진 돈의 정보를 출력하는 함수
         public void DisplayMoney()
         {
             Console.WriteLine("[ 보유 골드 ]");
             (money.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(" G");
         }
 
+        // 아이템 가격을 받아와서 해당 아이템을 살 수 있는지 확인하는 함수
         public bool IsAbleToBuy(int itemPrice)
         {
             return itemPrice <= money;
         }
 
+        // Item 객체를 받아와서 해당 아이템을 구입하는 함수
+        // 해당 아이템 가격만큼 money 값을 갱신하고, itemList(인벤토리에 있는 아이템 리스트)와 purchasedItemList(상점에서 구매한 아이템 리스트)에 객체를 추가
         public void BuyItem(Item item)
         {
             itemList.Add(item);
@@ -244,6 +250,8 @@ namespace personal_assignment
             money -= item.Price;
         }
 
+        // 플레이어가 상점에서 구매한 아이템의 목록을 출력하는 함수
+        // 인벤토리 아이템을 foreach로 순회하면서, 현재 아이템 이름이 구매한 아이템 목록에 있다면 해당 아이템 정보를 출력
         public void DisplayPurchasedItem()
         {
             Console.WriteLine("[ 아이템 목록 ]");
@@ -265,6 +273,8 @@ namespace personal_assignment
             }
         }
 
+        // 플레이어가 상점에서 아이템을 판매하는 함수
+        // 아이템 장착을 해제하고 아이템 가격 * 0.85 만큼 money에 더해준 뒤 itemList에서 해당 아이템 삭제
         public string SellItem(int itemIdx)
         {
             string itemName = purchasedItemList[itemIdx];
@@ -284,6 +294,9 @@ namespace personal_assignment
             return itemName;
         }
 
+        // 플레이어가 던전을 실패했을 때 실행되는 함수
+        // type이 0이라면 권장 방어력보다 플레이어의 방어력이 낮은 경우로, 체력이 1/2로 줄어듦
+        // type이 1이라면 권장 방어력보다 플레이어의 방어력이 높았지만, 피해량으로 인해 플레이어 체력이 0 이하가 되어 실패한 경우
         public void DungeonFailed(int type)
         {
             Console.WriteLine("[ 탐험 결과 ]");
@@ -298,6 +311,12 @@ namespace personal_assignment
             Console.WriteLine();
         }
 
+        // 플레이어가 던전을 성공했을 때 실행되는 함수
+        // 플레이어 체력과 money 값을 갱신
+        // 클리어한 던전의 수를 증가시킴 
+        // 만약 클리어한 던전의 수 = 현재 레벨의 숫자 이면 레벨업 상태
+        // 최대 레벨인 5레벨이라면 갱신 X
+        // 레벨업시 플레이어의 기본 방어/공격력 증가 및 클리어한 던전의 수를 0으로 초기화 -> 레벨업 정보도 함께 출력
         public void ClearDungeon(int decreasedHP, int reward)
         {
             Console.WriteLine("[ 탐험 결과 ]");
@@ -341,6 +360,8 @@ namespace personal_assignment
             Console.WriteLine();
         }
 
+        // 휴식하기 기능
+        // 플레이어 체력을 100으로 변경하고, money 값을 500 감소
         public void GetRest()
         {
             hp = 100;

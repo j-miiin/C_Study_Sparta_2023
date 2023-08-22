@@ -15,6 +15,7 @@ namespace personal_assignment.Repository
         const string ITEM_DB_PATH = "ItemDatabase.txt";
         const string ITEM_SOLD_STATE_DB_PATH = "ItemSoldStateDatabase.txt";
 
+        // 파일에서 Player 정보를 가져온 뒤 Player 객체로 반환
         public Player? GetPlayerInfo()
         {
             try
@@ -27,6 +28,7 @@ namespace personal_assignment.Repository
             }
         }
 
+        // 파일에서 상점 아이템 리스트를 읽어와서 반환(JSON 형식이 아닌 Excel을 txt 형식으로 저장한 파일에서 읽어옴)
         public List<Item> GetStoreItemList()
         {
             List<string[]> itemDB = new List<string[]>();
@@ -56,6 +58,7 @@ namespace personal_assignment.Repository
             return storeItemList;
         }
 
+        // 상점의 아이템 판매 현황 리스트를 읽어와 반환
         public Dictionary<string, bool>? GetStoreItemSoldStateList()
         {
             try
@@ -69,12 +72,14 @@ namespace personal_assignment.Repository
             }
         }
 
+        // Player 정보를 파일에 기록
         public void UpdatePlayerInfo(Player player)
         {
             string jdata = JsonConvert.SerializeObject(player);
             File.WriteAllText(DATA_PATH + PLAYER_DB_PATH, jdata);
         }
 
+        // 상점 아이템 판매 현황 리스트를 파일에 기록
         public void UpdateStoreItemSoldState(Dictionary<string, bool> soldState)
         {
             string jdata = JsonConvert.SerializeObject(soldState);

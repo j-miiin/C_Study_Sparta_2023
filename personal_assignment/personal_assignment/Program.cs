@@ -1,7 +1,4 @@
-﻿using Google.Cloud.Firestore;
-using Google.Cloud.Firestore.V1;
-using Newtonsoft.Json;
-using personal_assignment.Dungeon;
+﻿using personal_assignment.Dungeon;
 using personal_assignment.Repository;
 
 namespace personal_assignment
@@ -32,12 +29,10 @@ namespace personal_assignment
         static Store store;
 
         static IGameDatabaseRepository gameDatabaseRepository;
-        static FirestoreDb firestoreDB;
 
         static void Main(string[] args)
         {
             gameDatabaseRepository = new DefaultGameDatabaseRepository();
-            createFirebaseDB();
 
             InitPlayerInfo();
             InitStore();
@@ -55,16 +50,8 @@ namespace personal_assignment
                 else EndGame();
             }
         }
-        
-        static void createFirebaseDB()
-        {
-            string path = AppDomain.CurrentDomain.BaseDirectory + @"" + FirebaseKey.FIREBASE_KEY + ".json";
-            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
 
-            firestoreDB = FirestoreDb.Create(FirebaseKey.DB_NAME);
-        }
-
-        // 이전에 플레이한 기록이 있다면 읽어와서 player 객체에 저장
+        // 이전에 플레이한 기록이 있다면 gameDatabaseRepository를 통해 파일을 읽어와서 player 객체에 저장
         // 기록이 없다면 플레이어 닉네임을 받아서 새 플레이어 객체 생성
         static void InitPlayerInfo()
         {
@@ -86,6 +73,7 @@ namespace personal_assignment
             else player = tmp;        
         }        
 
+        // gameDatabaseRepository로부터 상점 아이템 DB와 상점 아이템 판매 현황 리스트를 읽어와서 Store 객체를 초기화
         static void InitStore()
         {
             store = new Store(gameDatabaseRepository.GetStoreItemList(), gameDatabaseRepository.GetStoreItemSoldStateList());
@@ -119,8 +107,7 @@ namespace personal_assignment
         }
 
         // 시작 화면에서 상태 보기 선택시 실행
-        // 화면에 플레이어의 정보 표시
-        // 레벨, 이름, 직업, 공격력, 방어력, 체력, Gold
+        // Player 객체에게 정보를 출력할 것을 요청
         static void DisplayPlayerInfo()
         {
             Console.Clear();
@@ -138,7 +125,8 @@ namespace personal_assignment
             if (select == 0) startState = select;
         }
 
-        // 플레이어의 인벤토리 상태를 보여줌
+        // 인벤토리 선택시 실행되는 함수
+        // Player 객체에게 인벤토리 상태 출력을 요청
         static void DisplayInventoryInfo()
         {
             Console.Clear();
@@ -166,7 +154,9 @@ namespace personal_assignment
             }
         }
 
-        // 인벤토리 - 장착 관리 
+        // 인벤토리 - 장착 관리 선택시 실행되는 함수
+        // Player 객체에게 인벤토리 목록을 번호와 함께 출력할 것을 요청
+        // 아이템 번호를 입력한다면 Player 객체에게 해당 아이템을 장착 및 해제할 것을 요청
         static void ManagementItemInventory()
         {
             bool isExit = false;
@@ -193,6 +183,8 @@ namespace personal_assignment
             }  
         }
 
+        // 인벤토리 - 아이템 정렬 선택시 실행되는 함수
+        // Player 객체에게 아이템을 정렬하여 출력할 것을 요청
         static void ArrangeItemInventory()
         {
             bool isExit = false;
@@ -223,6 +215,8 @@ namespace personal_assignment
             }
         }
 
+        // 상점 선택시 실행되는 함수
+        // Store 객체에게 상점 정보를 출력할 것을 요청
         static void DisplayStore()
         {
             Console.Clear();
@@ -246,6 +240,9 @@ namespace personal_assignment
             else SellItem();
         }
 
+        // 상점 - 아이템 구매 선택시 실행되는 함수
+        // Player 객체에게 현재 보유한 money 값을 출력할 것을 요청
+        // Store 객체에게 상점의 아이템 리스트를 번호와 함께 출력할 것을 요청
         static void BuyItem()
         {
             bool isExit = false;
@@ -271,8 +268,10 @@ namespace personal_assignment
                 }
                 else
                 {
+                    // 상점 아이템 리스트의 select-1번째 아이템이 구매 가능한지 확인
                     if (store.IsAbleToBuy(select - 1))
                     {
+                        // 해당 아이템 객체를 받아와서 Player에게 아이템을 구매할 돈이 충분한지 확인
                         Item selectedItem = store.GetStoreItem(select - 1);
                         if (player.IsAbleToBuy(selectedItem.Price))
                         {
@@ -295,6 +294,8 @@ namespace personal_assignment
             }
         }
 
+        // 상점 - 아이템 판매 선택시 실행되는 함수
+        // Player 객체에게 현재 보유한 돈과 상점에서 구매한 아이템 목록을 출력할 것을 요청
         static void SellItem()
         {
             bool isExit = false;
@@ -320,6 +321,8 @@ namespace personal_assignment
                 }
                 else
                 {
+                    // Player 객체에게 판매한 Item 객체를 받아와서 Store로 전달
+                    // Store 객체에서 해당 아이템의 판매 현황을 갱신할 것을 요청
                     string itemName = player.SellItem(select - 1);
                     store.RecoverItem(itemName);
                     ("판매를 완료했습니다.").PrintWithColor(ConsoleColor.Blue, true);
@@ -329,7 +332,7 @@ namespace personal_assignment
         }
 
         // 플레이어의 선택이 필요할 때 값이 유효한지 확인하는 함수
-        // 플레이어가 start부터 end 사이의 값을 선택했다면 그 값을 리턴
+        // start <= 값 <= end 인지 확인하고 올바른 값이라면 그 값을 리턴
         static int GetPlayerSelect(int start, int end)
         {
             Console.WriteLine("원하시는 행동을 입력해주세요.");
@@ -348,6 +351,9 @@ namespace personal_assignment
             return select;
         }
 
+        // 던전 입장시 실행되는 함수
+        // 각 던전의 정보를 출력하고 선택값을 받아옴
+        // 선택 값은 startDungeon으로 전달하여 알맞는 던전 객체를 생성
         static void DisplayDungeonInfo()
         {
             Console.Clear();
@@ -370,6 +376,7 @@ namespace personal_assignment
             }
         }
 
+        // 던전의 정보를 출력 
         static void printDungeonInfo(int mode, int recommendedShield)
         {
             (mode.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
@@ -385,6 +392,7 @@ namespace personal_assignment
             Console.WriteLine(" 이상 권장");
         }
 
+        // mode 값에 따라서 (0: 쉬운, 1: 일반, 2: 어려운) 알맞는 Dungeon 객체를 생성한 뒤 던전 플레이 진행
         static void startDungeon(int mode)
         {
             Console.Clear();
@@ -401,10 +409,11 @@ namespace personal_assignment
 
             int success = new Random().Next(1, 101);
 
+            // 플레이어의 기본 방어/공격력과 아이템 착용으로 인한 추가 방어/공격력을 더해서 총 방어/공격력 계산
             int playerTotalShield = player.Shield + player.GetAdditionalShield();
             int playerTotalPower = player.Power + player.GetAdditionalPower();
 
-            // 권장 방어력보다 낮을 때
+            // 던전의 권장 방어력보다 플레이어의 총 방어력이 낮을 때
             if ((dungeon.RecommendedShield > playerTotalShield) && (success > SUCCESS_PROBABLILITY))
             {
                 dungeon.FailedDungeon();
@@ -412,22 +421,28 @@ namespace personal_assignment
             }
             else
             {
-                // 권장 방어력보다 높을 때 or 낮지만 던전 성공시
+                // 던전의 권장 방어력보다 플레이어의 방어력이 높을 때
+                // or 던전의 권장 방어력보다 플레이어의 방어력이 높지만 60%의 확률로 던전 클리어를 성공했을 때
                 int defaultDecreasedHP = new Random().Next(20, 36);
                 int additionalDecreasedHP = dungeon.RecommendedShield - playerTotalShield;
                 int decreasedHP = defaultDecreasedHP + additionalDecreasedHP;
 
+                // 만약 던전 탐험으로 인한 피해량으로 플레이어의 체력이 0이하가 되면 던전 클리어 실패
                 if (decreasedHP >= player.HP)
                 {
                     dungeon.FailedDungeon();
                     player.DungeonFailed(1);
                 }
+                // 던전 성공시
                 else
                 {
+                    // 플레이어 공격력에 따른 추가 보상 계산
                     int additionalRewardPercent = new Random().Next(playerTotalPower, (playerTotalPower * 2) + 1);
                     int additionalReward = (int)((dungeon.DefaultReward * additionalRewardPercent) / 100);
                     int reward = dungeon.DefaultReward + additionalReward;
 
+                    // Dungeon 객체와 Player 객체에게 던전 클리어를 요청
+                    // Player 객체에게는 받은 피해량과 보상값을 전달
                     dungeon.ClearDungeon();
                     player.ClearDungeon(decreasedHP, reward);
                 }
@@ -444,6 +459,8 @@ namespace personal_assignment
             }
         }
 
+        // 휴식하기 선택시 실행되는 함수
+        // 현재 플레이어가 보유한 돈이 500 이상이면 Player 객체에게 휴식할 것을 요청
         static void TakeRest()
         {
             bool isExit = false;
@@ -483,6 +500,8 @@ namespace personal_assignment
             }
         }
 
+        // 게임 저장시 실행되는 함수
+        // gameDatabaseRepository에게 Player 정보와 Store 정보 저장을 요청
         static void SaveGame()
         {
             gameDatabaseRepository.UpdatePlayerInfo(player);
@@ -490,6 +509,7 @@ namespace personal_assignment
             startState = 0;
         }
 
+        // 게임 종료시 실행되는 함수
         static void EndGame()
         {
             SaveGame();
