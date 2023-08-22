@@ -170,7 +170,7 @@ namespace personal_assignment
                 // 아이템 이름
                 (" -").PrintWithColor(ConsoleColor.Yellow, false);
                 // 장착 관리 상태일 경우 번호 표시
-                if (type == 1) (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);\
+                if (type == 1) (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
                 // 장착한 아이템이라면 [E] 표시
                 if (item.IsEquipped) Console.Write(" [E] ");
 

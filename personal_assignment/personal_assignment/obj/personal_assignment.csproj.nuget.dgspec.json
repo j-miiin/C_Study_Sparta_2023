@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj": {}
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj": {}
   },
   "projects": {
-    "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj": {
+    "D:\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj",
+        "projectUniqueName": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj",
         "projectName": "personal_assignment",
-        "projectPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj",
+        "projectPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\personal_assignment.csproj",
         "packagesPath": "C:\\Users\\A\\.nuget\\packages\\",
-        "outputPath": "C:\\HDDjungmin\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\obj\\",
+        "outputPath": "D:\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\personal_assignment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\A\\AppData\\Roaming\\NuGet\\NuGet.Config",

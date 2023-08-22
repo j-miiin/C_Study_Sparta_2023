@@ -4,7 +4,7 @@ namespace personal_assignment.Repository
 {
     internal class DefaultGameDatabaseRepository : IGameDatabaseRepository
     {
-        const string DATA_PATH = "D:\\coding\\Game Study\\C_Study_Sparta_2023\\";
+        const string DATA_PATH = "D:\\coding\\Game Study\\C_Study_Sparta_2023\\personal_assignment\\";
         const string PLAYER_DB_PATH = "UserDatabase.txt";
         const string ITEM_DB_PATH = "ItemDatabase.txt";
         const string ITEM_SOLD_STATE_DB_PATH = "ItemSoldStateDatabase.txt";
