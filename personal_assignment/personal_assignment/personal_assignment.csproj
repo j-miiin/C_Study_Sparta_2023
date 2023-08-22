@@ -8,6 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="spartadungeon-firebase-adminsdk-ehm3m-4a1b516086.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="spartadungeon-firebase-adminsdk-ehm3m-4a1b516086.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.Firestore" Version="3.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 

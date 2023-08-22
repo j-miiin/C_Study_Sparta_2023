@@ -1,4 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
+using Newtonsoft.Json;
 using personal_assignment.Dungeon;
 using personal_assignment.Repository;
 
@@ -30,10 +32,12 @@ namespace personal_assignment
         static Store store;
 
         static IGameDatabaseRepository gameDatabaseRepository;
+        static FirestoreDb firestoreDB;
 
         static void Main(string[] args)
         {
             gameDatabaseRepository = new DefaultGameDatabaseRepository();
+            createFirebaseDB();
 
             InitPlayerInfo();
             InitStore();
@@ -52,6 +56,13 @@ namespace personal_assignment
             }
         }
         
+        static void createFirebaseDB()
+        {
+            string path = AppDomain.CurrentDomain.BaseDirectory + @"" + FirebaseKey.FIREBASE_KEY + ".json";
+            Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", path);
+
+            firestoreDB = FirestoreDb.Create(FirebaseKey.DB_NAME);
+        }
 
         // 이전에 플레이한 기록이 있다면 읽어와서 player 객체에 저장
         // 기록이 없다면 플레이어 닉네임을 받아서 새 플레이어 객체 생성
