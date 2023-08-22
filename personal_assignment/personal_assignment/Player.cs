@@ -169,23 +169,13 @@ namespace personal_assignment
             foreach (Item item in itemList)
             {
                 // 아이템 이름
-                ("-").PrintWithColor(ConsoleColor.Yellow, false);
+                (" -").PrintWithColor(ConsoleColor.Yellow, false);
                 // 장착 관리 상태일 경우 번호 표시
                 if (type == 1) (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
-                if (item.IsEquipped) Console.Write(" [E]");
-                Console.Write(" " + item.Name);
+                if (item.IsEquipped) Console.Write(" [E] ");
 
-                Extension.MakeDivider();
-
-                // 아이템 효과
-                if (item.Type == 0) Console.Write("방어력 "); else Console.Write("공격력 ");
-                ("+").PrintWithColor(ConsoleColor.Yellow, false);
-                (item.Value.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
-
-                Extension.MakeDivider();
-
-                // 아이템 설명
-                Console.WriteLine(item.Description);
+                Extension.AlignmentPrint(new string[] { item.Name, item.Value.ToString(), item.Description }, item.Type);
+                Console.WriteLine();
 
                 idx++;
             }
@@ -263,27 +253,12 @@ namespace personal_assignment
                 if (purchasedItemList.Contains(item.Name))
                 {
                     // 아이템 이름
-                    ("-").PrintWithColor(ConsoleColor.Yellow, false);
+                    (" -").PrintWithColor(ConsoleColor.Yellow, false);
                     (" " + idx.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
                     if (item.IsEquipped) Console.Write(" [E]");
-                    Console.Write(" " + item.Name);
 
-                    Extension.MakeDivider();
-
-                    // 아이템 효과
-                    if (item.Type == 0) Console.Write("방어력 "); else Console.Write("공격력 ");
-                    ("+").PrintWithColor(ConsoleColor.Yellow, false);
-                    (item.Value.ToString()).PrintWithColor(ConsoleColor.Magenta, false);
-
-                    Extension.MakeDivider();
-
-                    // 아이템 설명
-                    Console.Write(item.Description);
-
-                    Extension.MakeDivider();
-
-                    // 아이템 판매일 경우 아이템 가격 표시
-                    (item.Price.ToString()).PrintWithColor(ConsoleColor.Magenta, false); Console.WriteLine(" G");
+                    Extension.AlignmentPrint(new string[] { item.Name, item.Value.ToString(), item.Description, item.Price.ToString() }, item.Type);
+                    Console.WriteLine();
 
                     idx++;
                 }

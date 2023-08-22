@@ -22,11 +22,44 @@ namespace personal_assignment
 
     public static class Extension
     {
-        public static void MakeDivider()
+        const int LENGTH10 = 10;
+        const int LENGTH30 = 30;
+
+        public static void AlignmentPrint(string[] text, int type)
         {
-            Console.Write(" ");
-            ("|").PrintWithColor(ConsoleColor.Yellow, false);
-            Console.Write(" ");
+            int idx = 0;
+            while (idx < text.Length)
+            {
+                string curStr = text[idx];
+                switch (idx)
+                {
+                    case 0:
+                        Console.Write($" {curStr, -LENGTH10}");
+                        break;
+                    case 1:
+                        Console.Write("   ");
+                        int length = curStr.Length + 8;
+                        if (type == 0) Console.Write("방어력 "); else Console.Write("공격력 ");
+                        ("+").PrintWithColor(ConsoleColor.Yellow, false);
+                        curStr.PrintWithColor(ConsoleColor.Magenta, false);
+                        while (12 - length >= 0)
+                        {
+                            Console.Write(" ");
+                            length++;
+                        }
+                        break;
+                    case 2:
+                        Console.Write($"     {curStr, -LENGTH30}");
+                        break;
+                    case 3:
+                        bool isSoldOut = (curStr == "구매 완료");
+                        ("   " + curStr).PrintWithColor(isSoldOut ? ConsoleColor.Yellow : ConsoleColor.Magenta, false);
+                        if (!isSoldOut) Console.Write(" G");
+                        break;
+                }
+                if (idx != text.Length - 1) ("|").PrintWithColor(ConsoleColor.Yellow, false);
+                idx++;
+            }
         }
     }
 }

@@ -367,7 +367,7 @@ namespace personal_assignment
             else if (mode == 2) Console.Write(". 일반 던전");
             else Console.Write(". 어려운 던전");
 
-            Extension.MakeDivider();
+            ("\t|    ").PrintWithColor(ConsoleColor.Yellow, false);
 
             Console.Write("방어력 "); 
             (recommendedShield.ToString()).PrintWithColor(ConsoleColor.Magenta, false); 
