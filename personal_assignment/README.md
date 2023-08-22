@@ -52,5 +52,6 @@
 ### 게임 저장
 - UserDatabase - Player 정보 저장
 <img src="https://velog.velcdn.com/images/lazypotato/post/85f2495d-1ab7-4ed0-a883-2fd568c4a5ce/image.png"/>
+
 - ItemSoldStateDatabase - 상점 아이템 판매 현황 저장
 <img src="https://velog.velcdn.com/images/lazypotato/post/8f6f30c9-ebb5-4dd2-9ca1-275b13052e2f/image.png"/>
