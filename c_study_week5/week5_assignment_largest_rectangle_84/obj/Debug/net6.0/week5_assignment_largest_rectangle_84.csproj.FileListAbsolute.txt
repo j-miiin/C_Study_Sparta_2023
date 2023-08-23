@@ -1,0 +1,15 @@
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\bin\Debug\net6.0\week5_assignment_largest_rectangle_84.exe
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\bin\Debug\net6.0\week5_assignment_largest_rectangle_84.deps.json
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\bin\Debug\net6.0\week5_assignment_largest_rectangle_84.runtimeconfig.json
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\bin\Debug\net6.0\week5_assignment_largest_rectangle_84.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\bin\Debug\net6.0\week5_assignment_largest_rectangle_84.pdb
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\week5_assignment_largest_rectangle_84.csproj.AssemblyReference.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\week5_assignment_largest_rectangle_84.GeneratedMSBuildEditorConfig.editorconfig
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\week5_assignment_largest_rectangle_84.AssemblyInfoInputs.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\week5_assignment_largest_rectangle_84.AssemblyInfo.cs
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\week5_assignment_largest_rectangle_84.csproj.CoreCompileInputs.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\week5_assignment_largest_rectangle_84.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\refint\week5_assignment_largest_rectangle_84.dll
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\week5_assignment_largest_rectangle_84.pdb
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\week5_assignment_largest_rectangle_84.genruntimeconfig.cache
+D:\coding\Game Study\C_Study_Sparta_2023\c_study_week5\week5_assignment_largest_rectangle_84\obj\Debug\net6.0\ref\week5_assignment_largest_rectangle_84.dll
