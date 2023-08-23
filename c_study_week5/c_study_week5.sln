@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week5_assignment_largest_re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week5_assignment_flood_fill_733", "week5_assignment_flood_fill_733\week5_assignment_flood_fill_733.csproj", "{939A08AB-3848-44F1-B669-45C7858CAC7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "week5_assignment_longest_subsequence_300", "week5_assignment_longest_subsequence_300\week5_assignment_longest_subsequence_300.csproj", "{07B044F7-5D61-4BFE-8980-250C73F974BC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{939A08AB-3848-44F1-B669-45C7858CAC7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{939A08AB-3848-44F1-B669-45C7858CAC7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{939A08AB-3848-44F1-B669-45C7858CAC7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07B044F7-5D61-4BFE-8980-250C73F974BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07B044F7-5D61-4BFE-8980-250C73F974BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07B044F7-5D61-4BFE-8980-250C73F974BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07B044F7-5D61-4BFE-8980-250C73F974BC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
